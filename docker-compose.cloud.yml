@@ -1,0 +1,102 @@
+# ---------------------------------------------------------------------------
+# Always-on cloud server (Oracle Free / any Linux VPS).
+# Permanent HTTPS via sslip.io — no custom domain required.
+#
+#   docker compose -f docker-compose.cloud.yml --env-file .env.cloud up -d --build
+# ---------------------------------------------------------------------------
+
+name: smf-cloud
+
+services:
+  db:
+    image: mcr.microsoft.com/azure-sql-edge:latest
+    environment:
+      ACCEPT_EULA: "Y"
+      MSSQL_SA_PASSWORD: "${DB_SA_PASSWORD:?Set DB_SA_PASSWORD in .env.cloud}"
+    volumes:
+      - smf-cloud-db:/var/opt/mssql
+    healthcheck:
+      test:
+        - CMD-SHELL
+        - /opt/mssql-tools18/bin/sqlcmd -S localhost -U sa -P "$$MSSQL_SA_PASSWORD" -C -Q "SELECT 1" || exit 1
+      interval: 15s
+      timeout: 10s
+      retries: 40
+      start_period: 90s
+    restart: unless-stopped
+
+  api:
+    build:
+      context: .
+      dockerfile: src/SMF.Api/Dockerfile
+    image: smf-api:cloud
+    depends_on:
+      db:
+        condition: service_healthy
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+      ASPNETCORE_URLS: http://+:8080
+      ConnectionStrings__DefaultConnection: >-
+        Server=db,1433;Database=SMF;User Id=sa;
+        Password=${DB_SA_PASSWORD};TrustServerCertificate=True;MultipleActiveResultSets=True;
+      Jwt__Issuer: smf-api
+      Jwt__Audience: smf-clients
+      Jwt__SigningKey: "${JWT_SIGNING_KEY:?Set JWT_SIGNING_KEY in .env.cloud}"
+      Jwt__TokenLifetimeMinutes: "480"
+      Cors__AllowedOrigins__0: "${PUBLIC_WEB_ORIGIN:-https://localhost}"
+      Cors__AllowedOrigins__1: "${PUBLIC_ADMIN_ORIGIN:-https://localhost}"
+    volumes:
+      - smf-cloud-uploads:/app/App_Data
+    restart: unless-stopped
+
+  web:
+    build:
+      context: ./web
+      dockerfile: Dockerfile
+    image: smf-web:cloud
+    depends_on:
+      - api
+    restart: unless-stopped
+
+  admin:
+    build:
+      context: ./admin
+      dockerfile: Dockerfile
+    image: smf-admin:cloud
+    depends_on:
+      - api
+    restart: unless-stopped
+
+  caddy:
+    image: caddy:2-alpine
+    depends_on:
+      - web
+      - admin
+    ports:
+      - "80:80"
+      - "443:443"
+    environment:
+      SSLIP_HOST: "${SSLIP_HOST:?Set SSLIP_HOST in .env.cloud}"
+    volumes:
+      - ./deploy/Caddyfile.cloud:/etc/caddy/Caddyfile:ro
+      - smf-caddy-data:/data
+      - smf-caddy-config:/config
+    restart: unless-stopped
+
+  cloudflared:
+    profiles: ["tunnel"]
+    image: cloudflare/cloudflared:latest
+    command: tunnel --no-autoupdate run --token ${CLOUDFLARE_TUNNEL_TOKEN}
+    depends_on:
+      - caddy
+    restart: unless-stopped
+
+volumes:
+  smf-cloud-db:
+    name: smf-cloud-db
+  smf-cloud-uploads:
+    name: smf-cloud-uploads
+  smf-caddy-data:
+    name: smf-caddy-data
+  smf-caddy-config:
+    name: smf-caddy-config

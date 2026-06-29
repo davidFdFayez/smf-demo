@@ -1,0 +1,116 @@
+# ---------------------------------------------------------------------------
+# SMF full-stack demo compose.
+#
+#   docker compose up -d --build
+#
+# Exposed on the host (defaults, override via .env):
+#   http://localhost:${WEB_PORT:-8080}    → public web app
+#   http://localhost:${ADMIN_PORT:-8081}  → admin panel
+#   http://localhost:${API_PORT:-5080}/swagger → API (direct)
+#   localhost:${DB_PORT:-11433}           → SQL Server (inside network it's :1433)
+# ---------------------------------------------------------------------------
+
+name: smf
+
+services:
+  db:
+    image: mcr.microsoft.com/mssql/server:2022-latest
+    container_name: smf-db
+    environment:
+      ACCEPT_EULA: "Y"
+      MSSQL_PID: "Developer"
+      MSSQL_SA_PASSWORD: "${DB_SA_PASSWORD:-Smf_Demo_Passw0rd!}"
+    ports:
+      - "${DB_PORT:-11433}:1433"
+    volumes:
+      - smf-db-data:/var/opt/mssql
+    healthcheck:
+      test:
+        - CMD-SHELL
+        - >-
+          /opt/mssql-tools18/bin/sqlcmd -S localhost -U sa
+          -P "$$MSSQL_SA_PASSWORD" -C -Q "SELECT 1" || exit 1
+      interval: 10s
+      timeout: 5s
+      retries: 20
+      start_period: 30s
+    restart: unless-stopped
+
+  api:
+    build:
+      context: .
+      dockerfile: src/SMF.Api/Dockerfile
+    image: smf-api:latest
+    container_name: smf-api
+    depends_on:
+      db:
+        condition: service_healthy
+    environment:
+      # Development env enables Swagger + DevSeeder so demo data is present.
+      ASPNETCORE_ENVIRONMENT: "Development"
+      ASPNETCORE_URLS: "http://+:8080"
+      ConnectionStrings__DefaultConnection: >-
+        Server=db,1433;Database=SMF;User Id=sa;
+        Password=${DB_SA_PASSWORD:-Smf_Demo_Passw0rd!};
+        TrustServerCertificate=True;MultipleActiveResultSets=True;
+      Jwt__Issuer: "smf-api"
+      Jwt__Audience: "smf-clients"
+      Jwt__SigningKey: "${JWT_SIGNING_KEY:-please-override-in-env-at-least-32-chars-long-demo-secret}"
+      Jwt__TokenLifetimeMinutes: "480"
+      # CORS still set for completeness (direct :5080 access). Same-origin
+      # requests via the Nginx proxies don't use CORS.
+      Cors__AllowedOrigins__0: "http://localhost:${WEB_PORT:-8080}"
+      Cors__AllowedOrigins__1: "http://localhost:${ADMIN_PORT:-8081}"
+      Cors__AllowedOrigins__2: "${PUBLIC_WEB_ORIGIN:-http://localhost:8080}"
+      Cors__AllowedOrigins__3: "${PUBLIC_ADMIN_ORIGIN:-http://localhost:8081}"
+    ports:
+      - "${API_PORT:-5080}:8080"
+    volumes:
+      # Persists governance documents and any future uploads across
+      # container restarts/recreates. Inside the container the path
+      # matches Compliance:Storage:LocalRoot in appsettings.json.
+      - smf-uploads:/app/App_Data
+    restart: unless-stopped
+
+  web:
+    build:
+      context: ./web
+      dockerfile: Dockerfile
+    image: smf-web:latest
+    container_name: smf-web
+    depends_on:
+      - api
+    ports:
+      - "${WEB_PORT:-8080}:80"
+    restart: unless-stopped
+
+  admin:
+    build:
+      context: ./admin
+      dockerfile: Dockerfile
+    image: smf-admin:latest
+    container_name: smf-admin
+    depends_on:
+      - api
+    ports:
+      - "${ADMIN_PORT:-8081}:80"
+    restart: unless-stopped
+
+  # Permanent HTTPS via Cloudflare Tunnel (configure hostnames in Cloudflare dashboard).
+  # Routes must target http://web:80 and http://admin:80 on this Docker network.
+  cloudflared:
+    image: cloudflare/cloudflared:latest
+    container_name: smf-tunnel
+    command: tunnel --no-autoupdate run --token ${CLOUDFLARE_TUNNEL_TOKEN}
+    depends_on:
+      - web
+      - admin
+    restart: unless-stopped
+    profiles:
+      - tunnel
+
+volumes:
+  smf-db-data:
+    name: smf-db-data
+  smf-uploads:
+    name: smf-uploads

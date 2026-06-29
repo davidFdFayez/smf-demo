@@ -1,0 +1,52 @@
+# Render.com — free hosting, NO credit card required.
+# Docs: https://render.com/docs/your-first-deploy
+#
+# After connecting this repo in Render, three services deploy automatically.
+
+services:
+  - type: web
+    name: smf-api
+    runtime: docker
+    dockerfilePath: ./src/SMF.Api/Dockerfile
+    dockerContext: .
+    plan: free
+    healthCheckPath: /swagger/index.html
+    envVars:
+      - key: ASPNETCORE_ENVIRONMENT
+        value: CloudDemo
+      - key: ConnectionStrings__DefaultConnection
+        value: ""
+      - key: Jwt__Issuer
+        value: smf-api
+      - key: Jwt__Audience
+        value: smf-clients
+      - key: Jwt__SigningKey
+        generateValue: true
+      - key: Jwt__TokenLifetimeMinutes
+        value: "480"
+
+  - type: web
+    name: smf-web
+    runtime: docker
+    dockerfilePath: ./web/Dockerfile.render
+    dockerContext: ./web
+    plan: free
+    envVars:
+      - key: API_UPSTREAM
+        fromService:
+          type: web
+          name: smf-api
+          property: hostport
+
+  - type: web
+    name: smf-admin
+    runtime: docker
+    dockerfilePath: ./admin/Dockerfile.render
+    dockerContext: ./admin
+    plan: free
+    envVars:
+      - key: API_UPSTREAM
+        fromService:
+          type: web
+          name: smf-api
+          property: hostport

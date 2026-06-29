@@ -1,0 +1,595 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>SMF — Demo Deck</title>
+<style>
+  @page { size: 1280px 720px; margin: 0; }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  body {
+    font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+    color: #0f172a;
+    background: #f1f5f9;
+  }
+  .slide {
+    width: 1280px;
+    height: 720px;
+    position: relative;
+    overflow: hidden;
+    page-break-after: always;
+    break-after: page;
+    display: flex;
+    flex-direction: column;
+    padding: 64px 72px;
+    background: #ffffff;
+  }
+  .slide:last-child { page-break-after: auto; }
+
+  /* Theme colors — Saudi green inspired */
+  :root {
+    --green-900: #064e3b;
+    --green-700: #047857;
+    --green-500: #10b981;
+    --green-100: #d1fae5;
+    --gold:      #d4af37;
+    --ink:       #0f172a;
+    --muted:     #475569;
+    --bg-soft:   #f8fafc;
+    --border:    #e2e8f0;
+  }
+
+  /* Decorative ribbon */
+  .ribbon {
+    position: absolute; top: 0; left: 0; right: 0; height: 8px;
+    background: linear-gradient(90deg, var(--green-900), var(--green-500), var(--gold));
+  }
+  .footer {
+    position: absolute; left: 72px; right: 72px; bottom: 28px;
+    display: flex; justify-content: space-between; align-items: center;
+    color: #64748b; font-size: 14px; letter-spacing: 0.04em;
+  }
+  .badge {
+    display: inline-block; padding: 4px 10px; border-radius: 999px;
+    background: var(--green-100); color: var(--green-900);
+    font-size: 13px; font-weight: 600; letter-spacing: 0.05em;
+  }
+  h1, h2, h3 { margin: 0; font-weight: 700; color: var(--ink); }
+  h1 { font-size: 56px; line-height: 1.1; }
+  h2 { font-size: 40px; line-height: 1.15; }
+  h3 { font-size: 22px; line-height: 1.3; }
+  p  { margin: 0; color: var(--muted); font-size: 18px; line-height: 1.55; }
+  ul { margin: 0; padding-left: 22px; }
+  ul li { font-size: 18px; line-height: 1.6; color: #1e293b; margin-bottom: 6px; }
+  code { font-family: "Consolas","Courier New",monospace; font-size: 16px; background: #0f172a; color: #e2e8f0; padding: 2px 8px; border-radius: 6px; }
+  .accent { color: var(--green-700); }
+
+  /* Cover slide */
+  .cover {
+    background:
+      radial-gradient(900px 600px at 90% -10%, rgba(212,175,55,0.18), transparent 60%),
+      radial-gradient(900px 700px at -10% 110%, rgba(16,185,129,0.22), transparent 60%),
+      linear-gradient(135deg, #04231a 0%, #064e3b 60%, #023022 100%);
+    color: #f8fafc;
+  }
+  .cover .ribbon { background: linear-gradient(90deg, var(--gold), #fff8dc, var(--gold)); }
+  .cover h1 { color: #fff; font-size: 72px; }
+  .cover h2 { color: #d1fae5; font-weight: 500; font-size: 28px; margin-top: 12px; }
+  .cover .meta {
+    margin-top: auto;
+    display: flex; gap: 28px; flex-wrap: wrap;
+    font-size: 16px; color: #d1fae5; opacity: 0.9;
+  }
+  .cover .meta div b { color: #fff; display: block; font-size: 14px; letter-spacing: 0.1em; text-transform: uppercase; opacity: 0.8; }
+  .cover .crest {
+    position: absolute; right: 72px; top: 90px;
+    width: 160px; height: 160px; border-radius: 50%;
+    background:
+      radial-gradient(circle at 30% 30%, rgba(255,255,255,0.25), transparent 50%),
+      conic-gradient(from 220deg, var(--gold), #fff8dc, var(--gold), #b8860b, var(--gold));
+    box-shadow: 0 30px 80px rgba(0,0,0,0.4), inset 0 0 0 4px rgba(0,0,0,0.15);
+    display: flex; align-items: center; justify-content: center;
+    color: #04231a; font-weight: 800; font-size: 22px; letter-spacing: 0.18em;
+  }
+
+  /* Section title slide */
+  .section-title {
+    background: linear-gradient(135deg, #064e3b 0%, #047857 100%);
+    color: #fff; align-items: flex-start; justify-content: center;
+  }
+  .section-title h1 { color: #fff; font-size: 80px; }
+  .section-title p { color: #d1fae5; font-size: 22px; margin-top: 16px; }
+  .section-title .num {
+    font-size: 220px; font-weight: 800; opacity: 0.12;
+    position: absolute; right: 60px; bottom: -40px; color: #fff;
+  }
+
+  /* Content slide title */
+  .slide h2.title { padding-bottom: 16px; border-bottom: 4px solid var(--green-500); display: inline-block; padding-right: 80px; }
+  .subtitle { color: var(--muted); font-size: 20px; margin-top: 8px; }
+
+  /* Layouts */
+  .row { display: flex; gap: 28px; }
+  .col { flex: 1; }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; }
+  .grid-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 24px; }
+
+  .card {
+    background: var(--bg-soft);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 22px 24px;
+    box-shadow: 0 1px 0 rgba(15,23,42,0.04);
+  }
+  .card h3 { color: var(--green-700); margin-bottom: 8px; }
+  .card .icon {
+    width: 44px; height: 44px; border-radius: 12px;
+    background: var(--green-100); color: var(--green-700);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 22px; font-weight: 800; margin-bottom: 12px;
+  }
+  .kpi { font-size: 44px; font-weight: 800; color: var(--green-900); line-height: 1; }
+  .kpi-label { font-size: 14px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.08em; margin-top: 6px; }
+
+  table.matrix { width: 100%; border-collapse: collapse; }
+  table.matrix th, table.matrix td { text-align: left; padding: 10px 12px; font-size: 16px; border-bottom: 1px solid var(--border); }
+  table.matrix th { background: var(--green-900); color: #fff; font-weight: 600; }
+  table.matrix tr:nth-child(even) td { background: #f8fafc; }
+
+  /* Architecture diagram */
+  .arch { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-top: 18px; }
+  .layer { padding: 18px; border-radius: 14px; color: #fff; font-weight: 600; text-align: center; }
+  .layer small { display: block; font-weight: 400; opacity: 0.85; margin-top: 4px; font-size: 13px; }
+  .l-client { background: #1e3a8a; }
+  .l-edge   { background: #6d28d9; }
+  .l-app    { background: var(--green-700); }
+  .l-data   { background: #b45309; }
+  .arrow { text-align: center; color: #94a3b8; margin: 6px 0; font-size: 20px; }
+
+  .pill { display:inline-block; padding: 4px 10px; border-radius: 999px; background: #ecfdf5; color: var(--green-700); font-size: 13px; font-weight: 600; margin-right: 6px; }
+  .pill.dark { background: #0f172a; color: #fff; }
+
+  .qr {
+    width: 220px; height: 220px;
+    background:
+      conic-gradient(#0f172a 0 25%, #fff 0 50%, #0f172a 0 75%, #fff 0) 0 0/40px 40px,
+      repeating-linear-gradient(45deg, #0f172a 0 8px, #fff 0 14px);
+    border: 8px solid #0f172a;
+    border-radius: 12px;
+  }
+
+  .check { color: var(--green-700); font-weight: 700; }
+  .cross { color: #b91c1c; font-weight: 700; }
+
+  /* Closing slide */
+  .closing {
+    background: linear-gradient(135deg, #04231a 0%, #064e3b 100%);
+    color: #fff; align-items: center; justify-content: center; text-align: center;
+  }
+  .closing h1 { color: #fff; font-size: 88px; }
+  .closing p { color: #d1fae5; font-size: 22px; margin-top: 20px; }
+  .closing .links { margin-top: 36px; font-family: Consolas, monospace; font-size: 16px; }
+  .closing .links div { margin: 6px 0; opacity: 0.9; }
+</style>
+</head>
+<body>
+
+<!-- 1. Cover -->
+<section class="slide cover">
+  <div class="ribbon"></div>
+  <div class="crest">SMF</div>
+  <div style="margin-top: 80px;">
+    <span class="badge" style="background: rgba(212,175,55,0.18); color: #fde68a;">DEMO • PRODUCT REVIEW</span>
+    <h1 style="margin-top:16px;">Saudi MuayThai Federation</h1>
+    <h2>Membership, Live Scoring &amp; Digital Accreditation Platform</h2>
+  </div>
+  <div class="meta">
+    <div><b>Stack</b>.NET 8 · React 18 · Flutter · SQL Server · SignalR</div>
+    <div><b>Architecture</b>Clean / CQRS · Outbox · HMAC Tokens</div>
+    <div><b>Build</b>One-command Docker Compose</div>
+  </div>
+  <div class="footer" style="color:#cbd5e1;">
+    <span>SMF Platform</span><span>Demo Deck · v1.0</span>
+  </div>
+</section>
+
+<!-- 2. The Problem -->
+<section class="slide">
+  <div class="ribbon"></div>
+  <h2 class="title">The Problem</h2>
+  <p class="subtitle">Federations run on spreadsheets, paper IDs and chat groups. It does not scale.</p>
+  <div class="grid-2" style="margin-top: 40px;">
+    <div class="card">
+      <div class="icon">!</div>
+      <h3>Fragmented operations</h3>
+      <p>Member files in Excel, fees collected by bank transfer, referee assignments by WhatsApp, scores written on paper at the venue.</p>
+    </div>
+    <div class="card">
+      <div class="icon">?</div>
+      <h3>No source of truth</h3>
+      <p>Who is registered? Paid? Medically cleared? Eligible to compete tonight? Every question requires a phone call.</p>
+    </div>
+    <div class="card">
+      <div class="icon">×</div>
+      <h3>Trust gaps at the gate</h3>
+      <p>Printed cards are forged or shared. There is no offline-capable, verifiable identity at the venue door.</p>
+    </div>
+    <div class="card">
+      <div class="icon">~</div>
+      <h3>Zero live experience</h3>
+      <p>Audiences cannot follow a bout in real time. Sponsors cannot point at engagement numbers. Brackets are PDFs.</p>
+    </div>
+  </div>
+  <div class="footer"><span>1 / Problem</span><span>SMF Demo</span></div>
+</section>
+
+<!-- 3. The Solution -->
+<section class="slide">
+  <div class="ribbon"></div>
+  <h2 class="title">Our Solution</h2>
+  <p class="subtitle">One platform. Three surfaces. Every federation workflow under a single source of truth.</p>
+  <div class="grid-3" style="margin-top: 36px;">
+    <div class="card">
+      <div class="icon">W</div>
+      <h3>Public Web</h3>
+      <p>Member registration, fee payment, club microsites, news, live tournament brackets and live scoreboard for spectators.</p>
+      <div style="margin-top:10px;"><span class="pill">React 18</span><span class="pill">Vite</span><span class="pill">SignalR</span></div>
+    </div>
+    <div class="card">
+      <div class="icon">A</div>
+      <h3>Admin Panel</h3>
+      <p>Approvals, scheduling, referee assignment, head-referee &amp; timekeeper consoles, score overrides, certificates, exports.</p>
+      <div style="margin-top:10px;"><span class="pill">Role-based</span><span class="pill">Audit log</span></div>
+    </div>
+    <div class="card">
+      <div class="icon">M</div>
+      <h3>Mobile (Flutter)</h3>
+      <p>Athlete digital ID with offline QR, EN/AR + RTL, auto-refresh on connectivity, gate-scanner-ready.</p>
+      <div style="margin-top:10px;"><span class="pill">Offline-first</span><span class="pill">HMAC-signed</span></div>
+    </div>
+  </div>
+  <div class="row" style="margin-top: 28px; gap: 16px;">
+    <div class="card" style="flex:1;"><h3 style="font-size:18px;">Backend</h3><p style="font-size:15px;">.NET 8 minimal-API, MediatR CQRS, FluentValidation, EF Core, SignalR hubs.</p></div>
+    <div class="card" style="flex:1;"><h3 style="font-size:18px;">Reliability</h3><p style="font-size:15px;">Transactional outbox, idempotent webhooks, optimistic concurrency on ID issuance.</p></div>
+    <div class="card" style="flex:1;"><h3 style="font-size:18px;">Deploy</h3><p style="font-size:15px;">One <code>docker compose up</code> brings up DB + API + Web + Admin.</p></div>
+  </div>
+  <div class="footer"><span>2 / Solution</span><span>SMF Demo</span></div>
+</section>
+
+<!-- 4. Architecture -->
+<section class="slide">
+  <div class="ribbon"></div>
+  <h2 class="title">Architecture</h2>
+  <p class="subtitle">Clean Architecture + CQRS — a stable core surrounded by replaceable I/O.</p>
+  <div class="arch">
+    <div class="layer l-client">Clients<small>Web SPA · Admin SPA · Flutter</small></div>
+    <div class="layer l-edge">Edge<small>Nginx reverse proxy<br/>HTTPS / WebSocket</small></div>
+    <div class="layer l-app">Application<small>.NET 8 API · MediatR<br/>SignalR Hubs</small></div>
+    <div class="layer l-data">Data &amp; Async<small>SQL Server · EF Core<br/>Outbox poller</small></div>
+  </div>
+  <div class="grid-2" style="margin-top: 30px;">
+    <div class="card">
+      <h3>Why Clean Architecture</h3>
+      <ul>
+        <li><b>Domain</b> has zero external dependencies — pure entities &amp; invariants.</li>
+        <li><b>Application</b> orchestrates: commands, validators, handlers.</li>
+        <li><b>Infrastructure</b> is swappable: EF Core today, anything tomorrow.</li>
+        <li><b>API</b> is a thin host that maps HTTP/JSON to commands.</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>Why CQRS + MediatR</h3>
+      <ul>
+        <li>Each business action is a single explicit <code>Command</code>.</li>
+        <li>Pipeline behaviors give us validation, logging, retries for free.</li>
+        <li>Read models can evolve independently from writes.</li>
+        <li>Testable end-to-end without spinning up the web host.</li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer"><span>3 / Architecture</span><span>SMF Demo</span></div>
+</section>
+
+<!-- 5. Section: Member Registration -->
+<section class="slide section-title">
+  <div class="ribbon"></div>
+  <span class="badge" style="background: rgba(255,255,255,0.12); color: #d1fae5;">MODULE 01</span>
+  <h1 style="margin-top: 16px;">Membership<br/>Registration</h1>
+  <p>From sign-up to a verified, paying, medically-cleared SMF member.</p>
+  <div class="num">01</div>
+</section>
+
+<!-- 6. Registration features -->
+<section class="slide">
+  <div class="ribbon"></div>
+  <h2 class="title">Membership Lifecycle</h2>
+  <p class="subtitle">A single command-style endpoint, defended in three layers.</p>
+  <div class="grid-2" style="margin-top: 32px;">
+    <div class="card">
+      <h3>Smart, generated SMF ID</h3>
+      <p>Format <code>#SMF{YYYY}-{00001}</code>. Allocated atomically with optimistic concurrency, so two sign-ups at the same instant never collide and never skip a number.</p>
+    </div>
+    <div class="card">
+      <h3>Defense in depth</h3>
+      <ul>
+        <li>UI hides irrelevant fields (Zod live validation).</li>
+        <li>Server re-validates with FluentValidation.</li>
+        <li>Domain entity enforces invariants on <code>Member.Register()</code>.</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>Minor athlete protection</h3>
+      <p>If <i>Role = Athlete</i> and age &lt; 18, <b>Guardian Consent</b> is required — checked in UI, schema, server validator, and entity.</p>
+    </div>
+    <div class="card">
+      <h3>Medical clearance &amp; approvals</h3>
+      <p>Admin records clearance, approves or rejects. The state machine is on the entity itself, not scattered across handlers.</p>
+    </div>
+  </div>
+  <div class="footer"><span>4 / Registration</span><span>SMF Demo</span></div>
+</section>
+
+<!-- 7. Section: Payments -->
+<section class="slide section-title">
+  <div class="ribbon"></div>
+  <span class="badge" style="background: rgba(255,255,255,0.12); color: #d1fae5;">MODULE 02</span>
+  <h1 style="margin-top: 16px;">Payments &amp;<br/>Outbox</h1>
+  <p>Take money safely. Never lose a receipt. Never double-issue an ID.</p>
+  <div class="num">02</div>
+</section>
+
+<!-- 8. Payments deep dive -->
+<section class="slide">
+  <div class="ribbon"></div>
+  <h2 class="title">Payments — Reliability First</h2>
+  <p class="subtitle">Webhooks are unreliable by nature. We design for exactly-once business effects.</p>
+  <div class="grid-2" style="margin-top: 28px;">
+    <div class="card">
+      <h3>Signed webhooks</h3>
+      <p>Every payment provider callback is verified with HMAC against a shared secret. Forgeries are rejected at the door.</p>
+    </div>
+    <div class="card">
+      <h3>Idempotent state transitions</h3>
+      <p><code>Payment.MarkSucceeded()</code> is a no-op on duplicates. Replaying a webhook ten times produces the same single fee record.</p>
+    </div>
+    <div class="card">
+      <h3>Transactional outbox</h3>
+      <p><code>PaymentSuccessfulEvent</code> is staged in the same SQL transaction that flips the payment row. A background poller dispatches it through MediatR with bounded retries.</p>
+    </div>
+    <div class="card">
+      <h3>Atomicity across processes</h3>
+      <p>Crash mid-handler? The outbox row stays pending and the next poll picks it up. <span class="check">No event is ever lost.</span></p>
+    </div>
+  </div>
+  <div class="footer"><span>5 / Payments</span><span>SMF Demo</span></div>
+</section>
+
+<!-- 9. Section: Digital ID -->
+<section class="slide section-title">
+  <div class="ribbon"></div>
+  <span class="badge" style="background: rgba(255,255,255,0.12); color: #d1fae5;">MODULE 03</span>
+  <h1 style="margin-top: 16px;">Offline Digital<br/>Accreditation</h1>
+  <p>One QR code. Works without internet. Cannot be forged. Revocation-aware.</p>
+  <div class="num">03</div>
+</section>
+
+<!-- 10. Digital ID -->
+<section class="slide">
+  <div class="ribbon"></div>
+  <h2 class="title">Digital ID at the Gate</h2>
+  <div class="row" style="margin-top: 28px; align-items: stretch;">
+    <div class="col" style="flex: 1.2;">
+      <div class="card" style="height:100%;">
+        <h3>How it works</h3>
+        <ol style="padding-left: 22px;">
+          <li><b>Issue</b> — server signs an HMAC-SHA256 token: <code>base64url(payload).base64url(sig)</code>.</li>
+          <li><b>Cache</b> — Flutter stores it in Hive; QR renders on first paint, no spinner.</li>
+          <li><b>Scan</b> — gate device scans, calls <code>/admissions/verify</code>.</li>
+          <li><b>Verify</b> — server re-checks signature <i>and</i> live <code>RegistrationStatus</code>.</li>
+          <li><b>Refresh</b> — app silently re-issues at the offline→online edge.</li>
+        </ol>
+        <div style="margin-top: 14px;">
+          <span class="pill dark">HMAC-SHA256</span>
+          <span class="pill dark">iat / exp</span>
+          <span class="pill dark">Bilingual EN/AR + RTL</span>
+        </div>
+      </div>
+    </div>
+    <div class="col" style="flex: 0.8;">
+      <div class="card" style="height:100%; display:flex; flex-direction:column; align-items:center; justify-content:center;">
+        <div class="qr" aria-hidden="true"></div>
+        <p style="margin-top:14px; text-align:center; font-weight:600; color: var(--ink);">#SMF2026-00042 — Approved</p>
+        <p style="font-size:14px;">Token valid · 24h · revocation-aware</p>
+      </div>
+    </div>
+  </div>
+  <div class="footer"><span>6 / Digital ID</span><span>SMF Demo</span></div>
+</section>
+
+<!-- 11. Admission outcomes table -->
+<section class="slide">
+  <div class="ribbon"></div>
+  <h2 class="title">Gate Decisions — Every Outcome Is Explicit</h2>
+  <p class="subtitle">All denials are HTTP 200 on purpose, so dashboards distinguish "scanner offline" from "token rejected".</p>
+  <table class="matrix" style="margin-top: 24px;">
+    <thead>
+      <tr><th>Outcome</th><th>HTTP</th><th>What it means at the door</th></tr>
+    </thead>
+    <tbody>
+      <tr><td><b class="check">Admitted</b></td><td>200</td><td>Signature valid, in window, status Approved or Active.</td></tr>
+      <tr><td><b class="cross">TokenMalformed</b></td><td>200</td><td>Cannot parse <code>payload.sig</code>. Likely a non-SMF QR.</td></tr>
+      <tr><td><b class="cross">SignatureMismatch</b></td><td>200</td><td>Forgery, replay across environments, or rotated signing key.</td></tr>
+      <tr><td><b class="cross">NotYetValid / Expired</b></td><td>200</td><td>Outside <code>iat</code>/<code>exp</code> window (clock skew honored).</td></tr>
+      <tr><td><b class="cross">MemberUnknown</b></td><td>200</td><td>Token references a member id that no longer exists.</td></tr>
+      <tr><td><b class="cross">MemberNotInGoodStanding</b></td><td>200</td><td>Live status is Pending / Suspended — denied even with a valid token.</td></tr>
+    </tbody>
+  </table>
+  <div class="footer"><span>7 / Digital ID</span><span>SMF Demo</span></div>
+</section>
+
+<!-- 12. Section: Live scoring -->
+<section class="slide section-title">
+  <div class="ribbon"></div>
+  <span class="badge" style="background: rgba(255,255,255,0.12); color: #d1fae5;">MODULE 04</span>
+  <h1 style="margin-top: 16px;">Live Scoring &amp;<br/>Tournaments</h1>
+  <p>Real-time bouts, live brackets, audited overrides — for fighters, referees and audiences.</p>
+  <div class="num">04</div>
+</section>
+
+<!-- 13. Live scoring -->
+<section class="slide">
+  <div class="ribbon"></div>
+  <h2 class="title">Real-Time Scoring Pipeline</h2>
+  <p class="subtitle">SignalR hubs broadcast every point, override and timer tick to every connected client.</p>
+  <div class="grid-3" style="margin-top: 36px;">
+    <div class="card">
+      <div class="icon">R</div>
+      <h3>Referee console</h3>
+      <p>Side-judge taps a score; it appears on the public scoreboard in &lt; 100 ms.</p>
+    </div>
+    <div class="card">
+      <div class="icon">H</div>
+      <h3>Head referee</h3>
+      <p>Can override a panel score. Every override is persisted as an audit event with reason &amp; actor.</p>
+    </div>
+    <div class="card">
+      <div class="icon">T</div>
+      <h3>Timekeeper</h3>
+      <p>Round, break and total clocks broadcast over the same hub. Reconnect-resilient.</p>
+    </div>
+  </div>
+  <div class="grid-2" style="margin-top: 24px;">
+    <div class="card">
+      <h3>Tournament brackets</h3>
+      <p>Auto-generate a single-elimination bracket from approved registrations. Public bracket page renders connectors live as winners advance.</p>
+    </div>
+    <div class="card">
+      <h3>Replay &amp; analytics</h3>
+      <p>Every score event is event-sourced — fighters get a per-round breakdown, federation gets engagement and accuracy metrics.</p>
+    </div>
+  </div>
+  <div class="footer"><span>8 / Live Scoring</span><span>SMF Demo</span></div>
+</section>
+
+<!-- 14. Section: Public engagement -->
+<section class="slide section-title">
+  <div class="ribbon"></div>
+  <span class="badge" style="background: rgba(255,255,255,0.12); color: #d1fae5;">MODULE 05</span>
+  <h1 style="margin-top: 16px;">Public Engagement<br/>&amp; Operations</h1>
+  <p>Clubs, news, certificates, live streams, exports — the whole federation in one place.</p>
+  <div class="num">05</div>
+</section>
+
+<!-- 15. Feature inventory -->
+<section class="slide">
+  <div class="ribbon"></div>
+  <h2 class="title">What's Already Built</h2>
+  <p class="subtitle">A non-exhaustive look at the modules shipping in the demo today.</p>
+  <div class="grid-3" style="margin-top: 28px;">
+    <div class="card"><h3>Members</h3><p>Registration · approvals · medical clearance · digital ID issuance · status timeline.</p></div>
+    <div class="card"><h3>Payments</h3><p>Gateway integration · signed webhooks · outbox · receipts.</p></div>
+    <div class="card"><h3>Matches</h3><p>Schedule · referee assignment · live scoring · score overrides · replay.</p></div>
+    <div class="card"><h3>Tournaments</h3><p>Bracket generation · live propagation · public bracket view.</p></div>
+    <div class="card"><h3>Clubs</h3><p>Club microsites · roster · contact &amp; news.</p></div>
+    <div class="card"><h3>Certificates</h3><p>HTML-rendered, downloadable, signed certificates of participation.</p></div>
+    <div class="card"><h3>News &amp; Events</h3><p>Federation news feed and event calendar with categories.</p></div>
+    <div class="card"><h3>Live streams</h3><p>Provider-agnostic embed (YouTube, Twitch, custom).</p></div>
+    <div class="card"><h3>Admin &amp; Analytics</h3><p>Role-aware admin · dashboards · CSV/JSON exports · safeguarding case log · notifications.</p></div>
+  </div>
+  <div class="footer"><span>9 / Inventory</span><span>SMF Demo</span></div>
+</section>
+
+<!-- 16. Tech stack -->
+<section class="slide">
+  <div class="ribbon"></div>
+  <h2 class="title">Technology &amp; Quality</h2>
+  <div class="grid-2" style="margin-top: 30px;">
+    <div class="card">
+      <h3>Backend</h3>
+      <ul>
+        <li>.NET 8 · ASP.NET Minimal API</li>
+        <li>MediatR · FluentValidation · EF Core</li>
+        <li>SignalR for real-time hubs</li>
+        <li>SQL Server 2022 · LocalDB / InMemory fallback</li>
+        <li>Serilog structured logging</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>Frontend &amp; Mobile</h3>
+      <ul>
+        <li>React 18 + TypeScript + Vite + Tailwind</li>
+        <li>react-hook-form + Zod end-to-end</li>
+        <li>Flutter (Hive cache, EN/AR with RTL)</li>
+        <li>Nginx static hosting + reverse proxy</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>DevOps</h3>
+      <ul>
+        <li>Single <code>docker compose up</code> bootstrap</li>
+        <li>Cloudflare Tunnel for instant public demos</li>
+        <li>EF Core migrations, applied on Dev boot</li>
+        <li>Secrets via .NET user-secrets / env / KMS</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>Testing &amp; Hardening</h3>
+      <ul>
+        <li>Unit + handler tests (xUnit + WebApplicationFactory)</li>
+        <li>ProblemDetails error responses everywhere</li>
+        <li>Idempotency · retries · concurrency tests</li>
+        <li>CORS allow-list configurable per environment</li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer"><span>10 / Tech</span><span>SMF Demo</span></div>
+</section>
+
+<!-- 17. Demo flow -->
+<section class="slide">
+  <div class="ribbon"></div>
+  <h2 class="title">Live Demo Flow</h2>
+  <p class="subtitle">Five minutes, end-to-end. Works on the demo URLs at the back of this deck.</p>
+  <div class="grid-2" style="margin-top: 28px;">
+    <div class="card"><h3>1 · Register</h3><p>On the public site, register an athlete. Watch <code>#SMF2026-XXXXX</code> appear instantly. Try a minor without guardian consent — see the inline server error.</p></div>
+    <div class="card"><h3>2 · Approve</h3><p>In the admin, approve the new member. Status flips Pending → Approved. Federation now has a real, addressable member.</p></div>
+    <div class="card"><h3>3 · Scoreboard live</h3><p>Open the public scoreboard for a match. In admin, drive Scoring / Head Referee / Timekeeper consoles — the public page updates in real time.</p></div>
+    <div class="card"><h3>4 · Bracket generate</h3><p>In Brackets, click <i>Generate from registrations</i>. Open the public tournament page — the bracket renders with connectors as bouts complete.</p></div>
+    <div class="card"><h3>5 · Digital ID</h3><p>Issue a digital ID for the athlete. Scan the QR at the gate (or call <code>/admissions/verify</code>) — admitted, expired, or denied with a clear outcome.</p></div>
+    <div class="card"><h3>6 · Resilience</h3><p>Replay a payment webhook ten times — exactly one fee row. Kill the API mid-flow — outbox replays the event on restart. Nothing lost.</p></div>
+  </div>
+  <div class="footer"><span>11 / Demo</span><span>SMF Demo</span></div>
+</section>
+
+<!-- 18. Roadmap / next steps -->
+<section class="slide">
+  <div class="ribbon"></div>
+  <h2 class="title">What's Next</h2>
+  <p class="subtitle">Hardening the demo into a federation-grade production system.</p>
+  <div class="grid-3" style="margin-top: 32px;">
+    <div class="card"><h3>Auth &amp; SSO</h3><p>OIDC + roles for athletes, referees, club admins, federation staff. Gate every issuance endpoint behind real identity.</p></div>
+    <div class="card"><h3>Productionised infra</h3><p>Managed SQL (Azure SQL / RDS) · TLS via Caddy/Traefik · log aggregation (Seq / Loki) · CI image builds.</p></div>
+    <div class="card"><h3>Mobile maturity</h3><p>Apple/Google account binding · screenshot prevention · push for fight-card &amp; gate updates.</p></div>
+    <div class="card"><h3>Horizontal scale</h3><p>Outbox lease column for multi-instance dispatchers · Redis backplane for SignalR.</p></div>
+    <div class="card"><h3>Federation analytics</h3><p>Cohort dashboards · referee accuracy · revenue · sponsorship engagement metrics.</p></div>
+    <div class="card"><h3>Internationalisation</h3><p>Full Arabic translation pass across web/admin (mobile already EN/AR).</p></div>
+  </div>
+  <div class="footer"><span>12 / Roadmap</span><span>SMF Demo</span></div>
+</section>
+
+<!-- 19. Closing -->
+<section class="slide closing">
+  <div class="ribbon"></div>
+  <span class="badge" style="background: rgba(212,175,55,0.18); color: #fde68a;">THANK YOU</span>
+  <h1 style="margin-top: 14px;">Let's run the demo.</h1>
+  <p>Public web · Admin · Swagger — live, on the URLs below.</p>
+  <div class="links">
+    <div><b style="color:#fde68a;">Public web</b> &nbsp;https://cosmetic-step-slip-wrapping.trycloudflare.com</div>
+    <div><b style="color:#fde68a;">Admin panel</b>&nbsp;https://calculated-entrance-helping-memphis.trycloudflare.com</div>
+    <div><b style="color:#fde68a;">Swagger</b> &nbsp;&nbsp;&nbsp;&nbsp;https://cosmetic-step-slip-wrapping.trycloudflare.com/swagger/</div>
+  </div>
+  <p style="margin-top: 28px; font-size: 14px; opacity: 0.7;">URLs are temporary cloudflared quick-tunnels and rotate on each run.</p>
+</section>
+
+</body>
+</html>

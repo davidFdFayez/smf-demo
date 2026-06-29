@@ -1,0 +1,9 @@
+.env
+.env.cloud
+*.env.local
+node_modules/
+**/bin/
+**/obj/
+terminals/
+agent-tools/
+cloud-urls.txt

@@ -7,3 +7,10 @@ node_modules/
 terminals/
 agent-tools/
 cloud-urls.txt
+/.vs/SMF/CopilotIndices/17.14.1431.25910/CodeChunks.db
+/.vs/SMF/CopilotIndices/17.14.1431.25910/CodeChunks.db-shm
+/.vs/SMF/CopilotIndices/17.14.1431.25910/CodeChunks.db-wal
+/.vs/SMF/CopilotIndices/17.14.1431.25910/SemanticSymbols.db
+/.vs/SMF/CopilotIndices/17.14.1431.25910/SemanticSymbols.db-shm
+/.vs/SMF/CopilotIndices/17.14.1431.25910/SemanticSymbols.db-wal
+*.vsidx

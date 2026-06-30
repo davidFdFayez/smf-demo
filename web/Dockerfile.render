@@ -1,0 +1,19 @@
+# syntax=docker/dockerfile:1.7
+# Render.com deploy — listens on $PORT, proxies API via API_UPSTREAM env var.
+
+FROM node:20-alpine AS build
+WORKDIR /app
+COPY package.json package-lock.json* ./
+RUN npm ci || npm install
+COPY . .
+RUN npm run build
+
+FROM nginx:1.27-alpine AS runtime
+RUN apk add --no-cache gettext
+COPY nginx.render.template /etc/nginx/templates/default.conf.template
+COPY docker-entrypoint-render.sh /docker-entrypoint-render.sh
+RUN chmod +x /docker-entrypoint-render.sh
+COPY --from=build /app/dist /usr/share/nginx/html
+ENV API_UPSTREAM=api:8080
+EXPOSE 80
+ENTRYPOINT ["/docker-entrypoint-render.sh"]

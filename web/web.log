@@ -1,0 +1,67 @@
+
+> smf-web@0.1.0 dev
+> vite --host --port 5173
+
+
+  VITE v5.4.21  ready in 403 ms
+
+  ➜  Local:   http://localhost:5173/
+  ➜  Network: http://192.168.1.91:5173/
+  ➜  press h + enter to show help
+9:09:51 PM [vite] hmr update /src/index.css, /src/features/members/MembersList.tsx, /src/features/members/RegisterMemberForm.tsx, /src/features/payments/CheckoutPage.tsx
+9:10:28 PM [vite] hmr update /src/features/members/MembersList.tsx, /src/index.css
+9:10:32 PM [vite] hmr update /src/index.css, /src/features/members/MembersList.tsx, /src/features/members/RegisterMemberForm.tsx, /src/features/payments/CheckoutPage.tsx
+9:10:38 PM [vite] hmr update /src/index.css, /src/features/members/MembersList.tsx, /src/features/members/RegisterMemberForm.tsx, /src/features/payments/CheckoutPage.tsx
+9:11:48 PM [vite] hmr update /src/index.css, /src/i18n/index.tsx
+9:11:48 PM [vite] hmr invalidate /src/i18n/index.tsx Could not Fast Refresh ("useI18n" export is incompatible). Learn more at https://github.com/vitejs/vite-plugin-react/tree/main/packages/plugin-react#consistent-components-exports
+9:11:48 PM [vite] page reload src/i18n/index.tsx
+9:11:54 PM [vite] hmr update /src/index.css, /src/i18n/index.tsx
+9:11:54 PM [vite] hmr invalidate /src/i18n/index.tsx Could not Fast Refresh ("useI18n" export is incompatible). Learn more at https://github.com/vitejs/vite-plugin-react/tree/main/packages/plugin-react#consistent-components-exports
+9:11:54 PM [vite] page reload src/i18n/index.tsx
+9:11:59 PM [vite] hmr update /src/index.css, /src/i18n/index.tsx
+9:11:59 PM [vite] hmr invalidate /src/i18n/index.tsx Could not Fast Refresh ("useI18n" export is incompatible). Learn more at https://github.com/vitejs/vite-plugin-react/tree/main/packages/plugin-react#consistent-components-exports
+9:11:59 PM [vite] page reload src/i18n/index.tsx
+9:12:06 PM [vite] hmr update /src/index.css, /src/i18n/index.tsx
+9:12:06 PM [vite] hmr invalidate /src/i18n/index.tsx Could not Fast Refresh ("useI18n" export is incompatible). Learn more at https://github.com/vitejs/vite-plugin-react/tree/main/packages/plugin-react#consistent-components-exports
+9:12:06 PM [vite] page reload src/i18n/index.tsx
+9:12:17 PM [vite] hmr update /src/App.tsx, /src/index.css
+9:12:23 PM [vite] hmr update /src/App.tsx, /src/index.css
+9:12:50 PM [vite] hmr update /src/features/payments/CheckoutPage.tsx, /src/index.css
+9:12:58 PM [vite] page reload dist/index.html
+9:12:58 PM [vite] page reload dist/index.html
+10:38:49 PM [vite] hmr update /src/index.css, /src/i18n/index.tsx
+11:47:55 PM [vite] page reload tailwind.config.js
+11:48:01 PM [vite] page reload index.html
+11:48:11 PM [vite] hmr update /src/index.css
+11:48:16 PM [vite] hmr update /src/index.css, /src/features/news/NewsTab.tsx
+11:48:21 PM [vite] page reload src/main.tsx
+11:48:29 PM [vite] hmr update /src/App.tsx, /src/index.css
+11:48:51 PM [vite] page reload src/layouts/PublicLayout.tsx
+11:49:36 PM [vite] hmr update /src/index.css, /src/i18n/index.tsx
+11:50:15 PM [vite] page reload src/pages/HomePage.tsx
+11:50:21 PM [vite] page reload src/pages/RegisterPage.tsx
+11:50:38 PM [vite] page reload src/pages/NewsListPage.tsx
+11:50:48 PM [vite] page reload src/pages/NewsDetailPage.tsx
+11:51:02 PM [vite] page reload src/pages/RankingsPage.tsx
+11:51:18 PM [vite] page reload src/pages/EventsPage.tsx
+11:51:32 PM [vite] page reload src/pages/ClubsPage.tsx
+11:51:37 PM [vite] page reload src/pages/SafeguardingPage.tsx
+11:51:41 PM [vite] page reload src/pages/WatchMatchPage.tsx
+11:51:52 PM [vite] page reload src/pages/AboutPage.tsx
+11:51:57 PM [vite] page reload src/pages/NotFoundPage.tsx
+11:52:06 PM [vite] hmr update /src/features/admin/AdminDashboard.tsx, /src/index.css
+11:52:12 PM [vite] hmr update /src/features/members/MembersList.tsx, /src/index.css
+11:52:16 PM [vite] hmr update /src/features/clubs/ClubsTab.tsx, /src/index.css
+11:52:18 PM [vite] hmr update /src/features/events/EventsTab.tsx, /src/index.css
+11:52:21 PM [vite] hmr update /src/features/news/NewsTab.tsx, /src/index.css
+11:52:23 PM [vite] hmr update /src/features/scoring/RefereeConsole.tsx, /src/index.css
+11:54:41 PM [vite] page reload vite.config.ts.timestamp-1776894881084-c12d1099c3805.mjs
+11:54:43 PM [vite] ✨ new dependencies optimized: react-router-dom
+11:54:43 PM [vite] ✨ optimized dependencies changed. reloading
+11:55:01 PM [vite] page reload dist/index.html
+11:55:02 PM [vite] page reload dist/index.html
+11:59:22 PM [vite] page reload tailwind.config.js
+11:59:25 PM [vite] hmr update /src/index.css
+11:59:54 PM [vite] page reload dist/index.html
+11:59:54 PM [vite] page reload dist/index.html
+12:01:13 AM [vite] hmr update /src/index.css

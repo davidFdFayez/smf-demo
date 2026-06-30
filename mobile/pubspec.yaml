@@ -1,0 +1,40 @@
+name: smf_mobile
+description: Saudi MuayThai Federation mobile app – referee scoring + athlete digital ID.
+publish_to: "none"
+version: 0.2.0+2
+
+environment:
+  sdk: ">=3.4.0 <4.0.0"
+  flutter: ">=3.22.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  # ── Referee tablet ────────────────────────────────────────────────
+  # Real-time scoring hub client. Supports JWT via accessTokenFactory.
+  signalr_netcore: ^1.3.6
+
+  # ── Shared ────────────────────────────────────────────────────────
+  # Used for dev-token exchange and the /api/members/{id} fetch.
+  http: ^1.2.2
+
+  # ── Athlete Digital ID ────────────────────────────────────────────
+  # Riverpod — state management for the cached profile + connectivity.
+  flutter_riverpod: ^2.5.1
+  # Hive — offline cache for the athlete profile. No build_runner step
+  # because we store JSON strings in a Box<String> (see repository).
+  hive: ^2.2.3
+  hive_flutter: ^1.1.0
+  # QR rendering for the SMF_ID at the venue gate.
+  qr_flutter: ^4.1.0
+  # Network reachability — drives the offline banner on DigitalIdScreen.
+  connectivity_plus: ^6.0.3
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^4.0.0
+
+flutter:
+  uses-material-design: true

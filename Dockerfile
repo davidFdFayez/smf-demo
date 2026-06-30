@@ -1,7 +1,6 @@
 # syntax=docker/dockerfile:1.7
-# Cloud deploy (SnapDeploy / Render) — website + API in one container.
-# Build context MUST be repository root (.)
-# Do NOT use Windows paths like E:\... in SnapDeploy settings.
+# SnapDeploy / cloud — build context MUST be repo root containing: web/ src/ tests/ SMF.sln
+# SnapDeploy settings: Root Directory = .  |  Dockerfile = Dockerfile  |  Port = 8080
 
 FROM node:20-alpine AS web-build
 WORKDIR /app
@@ -29,12 +28,76 @@ RUN apt-get update && apt-get install -y --no-install-recommends nginx gettext \
 WORKDIR /app
 COPY --from=api-build /app/publish .
 COPY --from=web-build /app/dist /var/www/web
+RUN mkdir -p /app/App_Data/uploads && chown -R www-data:www-data /var/www/web
 
-RUN mkdir -p /app/App_Data/uploads \
- && chown -R www-data:www-data /var/www/web
+# Embedded nginx + start script (no deploy/ folder required on GitHub)
+RUN mkdir -p /etc/nginx/templates /etc/nginx/sites-available /etc/nginx/sites-enabled
+COPY <<'NGINX' /etc/nginx/templates/default.conf.template
+map $http_upgrade $connection_upgrade {
+    default upgrade;
+    ''      close;
+}
+server {
+    listen      ${PORT};
+    server_name _;
+    root  /var/www/web;
+    index index.html;
+    location /assets/ {
+        expires 1y;
+        add_header Cache-Control "public, immutable";
+        try_files $uri =404;
+    }
+    location /api/ {
+        proxy_pass         http://127.0.0.1:${API_PORT};
+        proxy_http_version 1.1;
+        proxy_set_header   Host              $host;
+        proxy_set_header   X-Forwarded-For   $proxy_add_x_forwarded_for;
+        proxy_set_header   X-Forwarded-Proto $scheme;
+        proxy_read_timeout 300s;
+    }
+    location /swagger/ {
+        proxy_pass         http://127.0.0.1:${API_PORT};
+        proxy_http_version 1.1;
+        proxy_set_header   Host              $host;
+        proxy_set_header   X-Forwarded-Proto $scheme;
+    }
+    location /hubs/ {
+        proxy_pass         http://127.0.0.1:${API_PORT};
+        proxy_http_version 1.1;
+        proxy_set_header   Upgrade           $http_upgrade;
+        proxy_set_header   Connection        $connection_upgrade;
+        proxy_set_header   Host              $host;
+        proxy_set_header   X-Forwarded-Proto $scheme;
+        proxy_buffering    off;
+        proxy_read_timeout 3600s;
+    }
+    location = /index.html {
+        add_header Cache-Control "no-cache, no-store, must-revalidate";
+        try_files $uri =404;
+    }
+    location / {
+        add_header Cache-Control "no-cache, no-store, must-revalidate";
+        try_files $uri $uri/ /index.html;
+    }
+}
+NGINX
 
-COPY deploy/snapdeploy/nginx-all-in-one.template /etc/nginx/templates/default.conf.template
-COPY deploy/snapdeploy/start.sh /start.sh
+COPY <<'START' /start.sh
+#!/bin/bash
+set -euo pipefail
+export PORT="${PORT:-8080}"
+export API_PORT="${API_PORT:-5000}"
+export ASPNETCORE_URLS="http://127.0.0.1:${API_PORT}"
+if [ -n "${PUBLIC_ORIGIN:-}" ]; then
+  export Compliance__PublicBaseUrl="${PUBLIC_ORIGIN}"
+fi
+envsubst '${PORT} ${API_PORT}' < /etc/nginx/templates/default.conf.template > /etc/nginx/sites-available/default
+ln -sf /etc/nginx/sites-available/default /etc/nginx/sites-enabled/default
+dotnet /app/SMF.Api.dll &
+sleep 15
+nginx -g 'daemon off;'
+START
+
 RUN chmod +x /start.sh
 
 ENV ASPNETCORE_ENVIRONMENT=CloudDemo \

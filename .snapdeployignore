@@ -1,0 +1,13 @@
+# SnapDeploy: deploy ONLY deploy/Dockerfile.all-in-one
+# This app uses in-memory demo data — ignore docker-compose.yml and render.yaml
+
+docker-compose.yml
+docker-compose.cloud.yml
+render.yaml
+deploy-cloud.ps1
+deploy-render-free.ps1
+publish-global.ps1
+deploy-always-on.ps1
+start-demo-tunnels.ps1
+start-cloudflare-tunnel.ps1
+start-demo-urls.ps1

@@ -1,0 +1,43 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <RootNamespace>SMF.Infrastructure</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="8.0.10" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Relational" Version="8.0.10" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="8.0.10" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.InMemory" Version="8.0.10" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="8.0.2" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.Abstractions" Version="8.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Hosting.Abstractions" Version="8.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="8.0.2" />
+    <PackageReference Include="Microsoft.Extensions.Options.ConfigurationExtensions" Version="8.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Http" Version="8.0.1" />
+    <!--
+      MailKit — used by SmtpEmailSender. The framework's System.Net.Mail still
+      ships but the .NET team officially recommends MailKit for anything that
+      needs modern TLS/auth (Office 365, Gmail App Passwords, etc.). Free MIT.
+    -->
+    <PackageReference Include="MailKit" Version="4.13.0" />
+    <PackageReference Include="QRCoder" Version="1.6.0" />
+    <!--
+      QuestPDF — used by QuestPdfInvoiceRenderer when Invoicing:EnableQuestPdfRenderer=true.
+      Community License is free for individuals + small businesses. If/when SMF
+      crosses the commercial threshold a paid Professional licence is required;
+      see https://www.questpdf.com/license/. The renderer can be left disabled
+      and the codebase still ships HTML invoices.
+    -->
+    <PackageReference Include="QuestPDF" Version="2024.7.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\SMF.Application\SMF.Application.csproj" />
+    <ProjectReference Include="..\SMF.Domain\SMF.Domain.csproj" />
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,849 @@
+11:48:11 PM [vite] Internal server error: [postcss] E:/New folder (2)/web/src/index.css:1:1: The `font-display` class does not exist. If `font-display` is a custom class, make sure it is defined within a `@layer` directive.
+  Plugin: vite:css
+  File: E:/New folder (2)/web/src/index.css:1:0
+  1  |  @tailwind base;
+     |  ^
+  2  |  @tailwind components;
+  3  |  @tailwind utilities;
+      at Input.error (E:\New folder (2)\web\node_modules\postcss\lib\input.js:135:16)
+      at AtRule.error (E:\New folder (2)\web\node_modules\postcss\lib\node.js:146:32)
+      at processApply (E:\New folder (2)\web\node_modules\tailwindcss\lib\lib\expandApplyAtRules.js:380:29)
+      at E:\New folder (2)\web\node_modules\tailwindcss\lib\lib\expandApplyAtRules.js:551:9
+      at E:\New folder (2)\web\node_modules\tailwindcss\lib\processTailwindFeatures.js:55:50
+      at async plugins (E:\New folder (2)\web\node_modules\tailwindcss\lib\plugin.js:38:17)
+      at async LazyResult.runAsync (E:\New folder (2)\web\node_modules\postcss\lib\lazy-result.js:293:11)
+      at async compileCSS (file:///E:/New%20folder%20(2)/web/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:36898:21)
+      at async TransformPluginContext.transform (file:///E:/New%20folder%20(2)/web/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:36171:11)
+      at async PluginContainer.transform (file:///E:/New%20folder%20(2)/web/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:49099:18)
+      at async loadAndTransform (file:///E:/New%20folder%20(2)/web/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:51978:27)
+      at async viteTransformMiddleware (file:///E:/New%20folder%20(2)/web/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:62106:24)
+11:48:16 PM [vite] Internal server error: [postcss] E:/New folder (2)/web/src/index.css:1:1: The `font-display` class does not exist. If `font-display` is a custom class, make sure it is defined within a `@layer` directive.
+  Plugin: vite:css
+  File: E:/New folder (2)/web/src/index.css:1:0
+  1  |  @tailwind base;
+     |  ^
+  2  |  @tailwind components;
+  3  |  @tailwind utilities;
+      at Input.error (E:\New folder (2)\web\node_modules\postcss\lib\input.js:135:16)
+      at AtRule.error (E:\New folder (2)\web\node_modules\postcss\lib\node.js:146:32)
+      at processApply (E:\New folder (2)\web\node_modules\tailwindcss\lib\lib\expandApplyAtRules.js:380:29)
+      at E:\New folder (2)\web\node_modules\tailwindcss\lib\lib\expandApplyAtRules.js:551:9
+      at E:\New folder (2)\web\node_modules\tailwindcss\lib\processTailwindFeatures.js:55:50
+      at async plugins (E:\New folder (2)\web\node_modules\tailwindcss\lib\plugin.js:38:17)
+      at async LazyResult.runAsync (E:\New folder (2)\web\node_modules\postcss\lib\lazy-result.js:293:11)
+      at async compileCSS (file:///E:/New%20folder%20(2)/web/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:36898:21)
+      at async TransformPluginContext.transform (file:///E:/New%20folder%20(2)/web/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:36171:11)
+      at async PluginContainer.transform (file:///E:/New%20folder%20(2)/web/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:49099:18)
+      at async loadAndTransform (file:///E:/New%20folder%20(2)/web/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:51978:27)
+      at async viteTransformMiddleware (file:///E:/New%20folder%20(2)/web/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:62106:24)
+11:48:22 PM [vite] Pre-transform error: Failed to resolve import "react-router-dom" from "src/main.tsx". Does the file exist?
+11:48:22 PM [vite] Internal server error: Failed to resolve import "react-router-dom" from "src/main.tsx". Does the file exist?
+  Plugin: vite:import-analysis
+  File: E:/New folder (2)/web/src/main.tsx:3:30
+  2  |  import React from "react";
+  3  |  import ReactDOM from "react-dom/client";
+  4  |  import { BrowserRouter } from "react-router-dom";
+     |                                 ^
+  5  |  import App from "./App";
+  6  |  import { I18nProvider } from "./i18n";
+      at TransformPluginContext._formatError (file:///E:/New%20folder%20(2)/web/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:49258:41)
+      at TransformPluginContext.error (file:///E:/New%20folder%20(2)/web/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:49253:16)
+      at normalizeUrl (file:///E:/New%20folder%20(2)/web/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:64307:23)
+      at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+      at async file:///E:/New%20folder%20(2)/web/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:64439:39
+      at async Promise.all (index 3)
+      at async TransformPluginContext.transform (file:///E:/New%20folder%20(2)/web/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:64366:7)
+      at async PluginContainer.transform (file:///E:/New%20folder%20(2)/web/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:49099:18)
+      at async loadAndTransform (file:///E:/New%20folder%20(2)/web/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:51978:27)
+      at async viteTransformMiddleware (file:///E:/New%20folder%20(2)/web/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:62106:24)
+11:48:22 PM [vite] Pre-transform error: [postcss] E:/New folder (2)/web/src/index.css:1:1: The `font-display` class does not exist. If `font-display` is a custom class, make sure it is defined within a `@layer` directive.
+11:48:22 PM [vite] Pre-transform error: [postcss] E:/New folder (2)/web/src/index.css:1:1: The `font-display` class does not exist. If `font-display` is a custom class, make sure it is defined within a `@layer` directive.
+11:48:29 PM [vite] Pre-transform error: Failed to resolve import "react-router-dom" from "src/main.tsx". Does the file exist?
+11:48:29 PM [vite] Pre-transform error: Failed to resolve import "./layouts/PublicLayout" from "src/App.tsx". Does the file exist?
+11:48:29 PM [vite] Internal server error: Failed to resolve import "react-router-dom" from "src/main.tsx". Does the file exist?
+  Plugin: vite:import-analysis
+  File: E:/New folder (2)/web/src/main.tsx:3:30
+  2  |  import React from "react";
+  3  |  import ReactDOM from "react-dom/client";
+  4  |  import { BrowserRouter } from "react-router-dom";
+     |                                 ^
+  5  |  import App from "./App";
+  6  |  import { I18nProvider } from "./i18n";
+      at TransformPluginContext._formatError (file:///E:/New%20folder%20(2)/web/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:49258:41)
+      at TransformPluginContext.error (file:///E:/New%20folder%20(2)/web/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:49253:16)
+      at normalizeUrl (file:///E:/New%20folder%20(2)/web/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:64307:23)
+      at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+      at async file:///E:/New%20folder%20(2)/web/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:64439:39
+      at async Promise.all (index 3)
+      at async TransformPluginContext.transform (file:///E:/New%20folder%20(2)/web/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:64366:7)
+      at async PluginContainer.transform (file:///E:/New%20folder%20(2)/web/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:49099:18)
+      at async loadAndTransform (file:///E:/New%20folder%20(2)/web/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:51978:27)
+      at async viteTransformMiddleware (file:///E:/New%20folder%20(2)/web/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:62106:24)
+11:48:29 PM [vite] Pre-transform error: [postcss] E:/New folder (2)/web/src/index.css:1:1: The `font-display` class does not exist. If `font-display` is a custom class, make sure it is defined within a `@layer` directive.
+11:48:29 PM [vite] Pre-transform error: [postcss] E:/New folder (2)/web/src/index.css:1:1: The `font-display` class does not exist. If `font-display` is a custom class, make sure it is defined within a `@layer` directive.
+11:48:29 PM [vite] Pre-transform error: Failed to resolve import "./layouts/PublicLayout" from "src/App.tsx". Does the file exist?
+11:48:52 PM [vite] Pre-transform error: Failed to resolve import "react-router-dom" from "src/main.tsx". Does the file exist?
+11:48:52 PM [vite] Pre-transform error: Failed to resolve import "./pages/HomePage" from "src/App.tsx". Does the file exist?
+11:48:52 PM [vite] Internal server error: Failed to resolve import "react-router-dom" from "src/main.tsx". Does the file exist?
+  Plugin: vite:import-analysis
+  File: E:/New folder (2)/web/src/main.tsx:3:30
+  2  |  import React from "react";
+  3  |  import ReactDOM from "react-dom/client";
+  4  |  import { BrowserRouter } from "react-router-dom";
+     |                                 ^
+  5  |  import App from "./App";
+  6  |  import { I18nProvider } from "./i18n";
+      at TransformPluginContext._formatError (file:///E:/New%20folder%20(2)/web/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:49258:41)
+      at TransformPluginContext.error (file:///E:/New%20folder%20(2)/web/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:49253:16)
+      at normalizeUrl (file:///E:/New%20folder%20(2)/web/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:64307:23)
+      at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+      at async file:///E:/New%20folder%20(2)/web/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:64439:39
+      at async Promise.all (index 3)
+      at async TransformPluginContext.transform (file:///E:/New%20folder%20(2)/web/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:64366:7)
+      at async PluginContainer.transform (file:///E:/New%20folder%20(2)/web/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:49099:18)
+      at async loadAndTransform (file:///E:/New%20folder%20(2)/web/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:51978:27)
+      at async viteTransformMiddleware (file:///E:/New%20folder%20(2)/web/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:62106:24)
+11:48:52 PM [vite] Pre-transform error: [postcss] E:/New folder (2)/web/src/index.css:1:1: The `font-display` class does not exist. If `font-display` is a custom class, make sure it is defined within a `@layer` directive.
+11:48:52 PM [vite] Pre-transform error: [postcss] E:/New folder (2)/web/src/index.css:1:1: The `font-display` class does not exist. If `font-display` is a custom class, make sure it is defined within a `@layer` directive.
+11:48:52 PM [vite] Pre-transform error: Failed to resolve import "react-router-dom" from "src/layouts/PublicLayout.tsx". Does the file exist?
+11:48:52 PM [vite] Pre-transform error: Failed to resolve import "./pages/HomePage" from "src/App.tsx". Does the file exist?
+11:48:52 PM [vite] Pre-transform error: Failed to resolve import "react-router-dom" from "src/layouts/PublicLayout.tsx". Does the file exist?
+11:49:36 PM [vite] Pre-transform error: Failed to resolve import "react-router-dom" from "src/main.tsx". Does the file exist?
+11:49:36 PM [vite] Pre-transform error: Failed to resolve import "./pages/HomePage" from "src/App.tsx". Does the file exist?
+11:49:36 PM [vite] Pre-transform error: Failed to resolve import "./pages/HomePage" from "src/App.tsx". Does the file exist?
+11:49:36 PM [vite] Internal server error: Failed to resolve import "react-router-dom" from "src/main.tsx". Does the file exist?
+  Plugin: vite:import-analysis
+  File: E:/New folder (2)/web/src/main.tsx:3:30
+  2  |  import React from "react";
+  3  |  import ReactDOM from "react-dom/client";
+  4  |  import { BrowserRouter } from "react-router-dom";
+     |                                 ^
+  5  |  import App from "./App";
+  6  |  import { I18nProvider } from "./i18n";
+      at TransformPluginContext._formatError (file:///E:/New%20folder%20(2)/web/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:49258:41)
+      at TransformPluginContext.error (file:///E:/New%20folder%20(2)/web/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:49253:16)
+      at normalizeUrl (file:///E:/New%20folder%20(2)/web/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:64307:23)
+      at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+      at async file:///E:/New%20folder%20(2)/web/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:64439:39
+      at async Promise.all (index 3)
+      at async TransformPluginContext.transform (file:///E:/New%20folder%20(2)/web/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:64366:7)
+      at async PluginContainer.transform (file:///E:/New%20folder%20(2)/web/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:49099:18)
+      at async loadAndTransform (file:///E:/New%20folder%20(2)/web/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:51978:27)
+      at async viteTransformMiddleware (file:///E:/New%20folder%20(2)/web/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:62106:24)
+11:49:36 PM [vite] Pre-transform error: [postcss] E:/New folder (2)/web/src/index.css:1:1: The `font-display` class does not exist. If `font-display` is a custom class, make sure it is defined within a `@layer` directive.
+11:49:36 PM [vite] Pre-transform error: [postcss] E:/New folder (2)/web/src/index.css:1:1: The `font-display` class does not exist. If `font-display` is a custom class, make sure it is defined within a `@layer` directive.
+11:49:36 PM [vite] Pre-transform error: Failed to resolve import "react-router-dom" from "src/layouts/PublicLayout.tsx". Does the file exist?
+11:50:16 PM [vite] Pre-transform error: Failed to resolve import "react-router-dom" from "src/main.tsx". Does the file exist?
+11:50:16 PM [vite] Internal server error: Failed to resolve import "react-router-dom" from "src/main.tsx". Does the file exist?
+  Plugin: vite:import-analysis
+  File: E:/New folder (2)/web/src/main.tsx:3:30
+  2  |  import React from "react";
+  3  |  import ReactDOM from "react-dom/client";
+  4  |  import { BrowserRouter } from "react-router-dom";
+     |                                 ^
+  5  |  import App from "./App";
+  6  |  import { I18nProvider } from "./i18n";
+      at TransformPluginContext._formatError (file:///E:/New%20folder%20(2)/web/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:49258:41)
+      at TransformPluginContext.error (file:///E:/New%20folder%20(2)/web/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:49253:16)
+      at normalizeUrl (file:///E:/New%20folder%20(2)/web/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:64307:23)
+      at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+      at async file:///E:/New%20folder%20(2)/web/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:64439:39
+      at async Promise.all (index 3)
+      at async TransformPluginContext.transform (file:///E:/New%20folder%20(2)/web/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:64366:7)
+      at async PluginContainer.transform (file:///E:/New%20folder%20(2)/web/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:49099:18)
+      at async loadAndTransform (file:///E:/New%20folder%20(2)/web/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:51978:27)
+      at async viteTransformMiddleware (file:///E:/New%20folder%20(2)/web/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:62106:24)
+11:50:16 PM [vite] Pre-transform error: Failed to resolve import "./pages/RegisterPage" from "src/App.tsx". Does the file exist?
+11:50:16 PM [vite] Pre-transform error: Failed to resolve import "./pages/RegisterPage" from "src/App.tsx". Does the file exist?
+11:50:16 PM [vite] Pre-transform error: [postcss] E:/New folder (2)/web/src/index.css:1:1: The `font-display` class does not exist. If `font-display` is a custom class, make sure it is defined within a `@layer` directive.
+11:50:16 PM [vite] Pre-transform error: [postcss] E:/New folder (2)/web/src/index.css:1:1: The `font-display` class does not exist. If `font-display` is a custom class, make sure it is defined within a `@layer` directive.
+11:50:16 PM [vite] Pre-transform error: Failed to resolve import "react-router-dom" from "src/layouts/PublicLayout.tsx". Does the file exist?
+11:50:16 PM [vite] Pre-transform error: Failed to resolve import "react-router-dom" from "src/pages/HomePage.tsx". Does the file exist?
+11:50:22 PM [vite] Pre-transform error: Failed to resolve import "react-router-dom" from "src/main.tsx". Does the file exist?
+11:50:22 PM [vite] Pre-transform error: Failed to resolve import "./pages/NewsListPage" from "src/App.tsx". Does the file exist?
+11:50:22 PM [vite] Pre-transform error: Failed to resolve import "./pages/NewsListPage" from "src/App.tsx". Does the file exist?
+11:50:22 PM [vite] Internal server error: Failed to resolve import "react-router-dom" from "src/main.tsx". Does the file exist?
+  Plugin: vite:import-analysis
+  File: E:/New folder (2)/web/src/main.tsx:3:30
+  2  |  import React from "react";
+  3  |  import ReactDOM from "react-dom/client";
+  4  |  import { BrowserRouter } from "react-router-dom";
+     |                                 ^
+  5  |  import App from "./App";
+  6  |  import { I18nProvider } from "./i18n";
+      at TransformPluginContext._formatError (file:///E:/New%20folder%20(2)/web/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:49258:41)
+      at TransformPluginContext.error (file:///E:/New%20folder%20(2)/web/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:49253:16)
+      at normalizeUrl (file:///E:/New%20folder%20(2)/web/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:64307:23)
+      at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+      at async file:///E:/New%20folder%20(2)/web/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:64439:39
+      at async Promise.all (index 3)
+      at async TransformPluginContext.transform (file:///E:/New%20folder%20(2)/web/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:64366:7)
+      at async PluginContainer.transform (file:///E:/New%20folder%20(2)/web/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:49099:18)
+      at async loadAndTransform (file:///E:/New%20folder%20(2)/web/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:51978:27)
+      at async viteTransformMiddleware (file:///E:/New%20folder%20(2)/web/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:62106:24)
+11:50:22 PM [vite] Pre-transform error: [postcss] E:/New folder (2)/web/src/index.css:1:1: The `font-display` class does not exist. If `font-display` is a custom class, make sure it is defined within a `@layer` directive.
+11:50:22 PM [vite] Pre-transform error: [postcss] E:/New folder (2)/web/src/index.css:1:1: The `font-display` class does not exist. If `font-display` is a custom class, make sure it is defined within a `@layer` directive.
+11:50:22 PM [vite] Pre-transform error: Failed to resolve import "react-router-dom" from "src/pages/HomePage.tsx". Does the file exist?
+11:50:22 PM [vite] Pre-transform error: Failed to resolve import "react-router-dom" from "src/layouts/PublicLayout.tsx". Does the file exist?
+11:50:39 PM [vite] Pre-transform error: Failed to resolve import "react-router-dom" from "src/main.tsx". Does the file exist?
+11:50:39 PM [vite] Pre-transform error: Failed to resolve import "./pages/NewsDetailPage" from "src/App.tsx". Does the file exist?
+11:50:39 PM [vite] Pre-transform error: [postcss] E:/New folder (2)/web/src/index.css:1:1: The `font-display` class does not exist. If `font-display` is a custom class, make sure it is defined within a `@layer` directive.
+11:50:39 PM [vite] Internal server error: Failed to resolve import "react-router-dom" from "src/main.tsx". Does the file exist?
+  Plugin: vite:import-analysis
+  File: E:/New folder (2)/web/src/main.tsx:3:30
+  2  |  import React from "react";
+  3  |  import ReactDOM from "react-dom/client";
+  4  |  import { BrowserRouter } from "react-router-dom";
+     |                                 ^
+  5  |  import App from "./App";
+  6  |  import { I18nProvider } from "./i18n";
+      at TransformPluginContext._formatError (file:///E:/New%20folder%20(2)/web/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:49258:41)
+      at TransformPluginContext.error (file:///E:/New%20folder%20(2)/web/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:49253:16)
+      at normalizeUrl (file:///E:/New%20folder%20(2)/web/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:64307:23)
+      at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+      at async file:///E:/New%20folder%20(2)/web/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:64439:39
+      at async Promise.all (index 3)
+      at async TransformPluginContext.transform (file:///E:/New%20folder%20(2)/web/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:64366:7)
+      at async PluginContainer.transform (file:///E:/New%20folder%20(2)/web/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:49099:18)
+      at async loadAndTransform (file:///E:/New%20folder%20(2)/web/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:51978:27)
+      at async viteTransformMiddleware (file:///E:/New%20folder%20(2)/web/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:62106:24)
+11:50:39 PM [vite] Pre-transform error: [postcss] E:/New folder (2)/web/src/index.css:1:1: The `font-display` class does not exist. If `font-display` is a custom class, make sure it is defined within a `@layer` directive.
+11:50:39 PM [vite] Pre-transform error: Failed to resolve import "react-router-dom" from "src/layouts/PublicLayout.tsx". Does the file exist?
+11:50:39 PM [vite] Pre-transform error: Failed to resolve import "react-router-dom" from "src/pages/NewsListPage.tsx". Does the file exist?
+11:50:39 PM [vite] Pre-transform error: Failed to resolve import "react-router-dom" from "src/pages/HomePage.tsx". Does the file exist?
+11:50:39 PM [vite] Pre-transform error: Failed to resolve import "./pages/NewsDetailPage" from "src/App.tsx". Does the file exist?
+11:50:39 PM [vite] Pre-transform error: Failed to resolve import "react-router-dom" from "src/layouts/PublicLayout.tsx". Does the file exist?
+11:50:39 PM [vite] Pre-transform error: Failed to resolve import "react-router-dom" from "src/pages/HomePage.tsx". Does the file exist?
+11:50:39 PM [vite] Pre-transform error: Failed to resolve import "react-router-dom" from "src/pages/NewsListPage.tsx". Does the file exist?
+11:50:49 PM [vite] Pre-transform error: Failed to resolve import "react-router-dom" from "src/main.tsx". Does the file exist?
+11:50:49 PM [vite] Pre-transform error: Failed to resolve import "./pages/RankingsPage" from "src/App.tsx". Does the file exist?
+11:50:49 PM [vite] Internal server error: Failed to resolve import "react-router-dom" from "src/main.tsx". Does the file exist?
+  Plugin: vite:import-analysis
+  File: E:/New folder (2)/web/src/main.tsx:3:30
+  2  |  import React from "react";
+  3  |  import ReactDOM from "react-dom/client";
+  4  |  import { BrowserRouter } from "react-router-dom";
+     |                                 ^
+  5  |  import App from "./App";
+  6  |  import { I18nProvider } from "./i18n";
+      at TransformPluginContext._formatError (file:///E:/New%20folder%20(2)/web/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:49258:41)
+      at TransformPluginContext.error (file:///E:/New%20folder%20(2)/web/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:49253:16)
+      at normalizeUrl (file:///E:/New%20folder%20(2)/web/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:64307:23)
+      at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+      at async file:///E:/New%20folder%20(2)/web/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:64439:39
+      at async Promise.all (index 3)
+      at async TransformPluginContext.transform (file:///E:/New%20folder%20(2)/web/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:64366:7)
+      at async PluginContainer.transform (file:///E:/New%20folder%20(2)/web/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:49099:18)
+      at async loadAndTransform (file:///E:/New%20folder%20(2)/web/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:51978:27)
+      at async viteTransformMiddleware (file:///E:/New%20folder%20(2)/web/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:62106:24)
+11:50:49 PM [vite] Pre-transform error: [postcss] E:/New folder (2)/web/src/index.css:1:1: The `font-display` class does not exist. If `font-display` is a custom class, make sure it is defined within a `@layer` directive.
+11:50:49 PM [vite] Pre-transform error: [postcss] E:/New folder (2)/web/src/index.css:1:1: The `font-display` class does not exist. If `font-display` is a custom class, make sure it is defined within a `@layer` directive.
+11:50:49 PM [vite] Pre-transform error: Failed to resolve import "react-router-dom" from "src/layouts/PublicLayout.tsx". Does the file exist?
+11:50:49 PM [vite] Pre-transform error: Failed to resolve import "react-router-dom" from "src/pages/NewsDetailPage.tsx". Does the file exist?
+11:50:49 PM [vite] Pre-transform error: Failed to resolve import "./pages/RankingsPage" from "src/App.tsx". Does the file exist?
+11:50:49 PM [vite] Pre-transform error: Failed to resolve import "react-router-dom" from "src/pages/NewsListPage.tsx". Does the file exist?
+11:50:49 PM [vite] Pre-transform error: Failed to resolve import "react-router-dom" from "src/pages/NewsListPage.tsx". Does the file exist?
+11:50:49 PM [vite] Pre-transform error: Failed to resolve import "react-router-dom" from "src/pages/HomePage.tsx". Does the file exist?
+11:50:49 PM [vite] Pre-transform error: Failed to resolve import "react-router-dom" from "src/pages/HomePage.tsx". Does the file exist?
+11:50:49 PM [vite] Pre-transform error: Failed to resolve import "react-router-dom" from "src/layouts/PublicLayout.tsx". Does the file exist?
+11:50:49 PM [vite] Pre-transform error: Failed to resolve import "react-router-dom" from "src/pages/NewsDetailPage.tsx". Does the file exist?
+11:51:03 PM [vite] Pre-transform error: Failed to resolve import "react-router-dom" from "src/main.tsx". Does the file exist?
+11:51:03 PM [vite] Internal server error: Failed to resolve import "react-router-dom" from "src/main.tsx". Does the file exist?
+  Plugin: vite:import-analysis
+  File: E:/New folder (2)/web/src/main.tsx:3:30
+  2  |  import React from "react";
+  3  |  import ReactDOM from "react-dom/client";
+  4  |  import { BrowserRouter } from "react-router-dom";
+     |                                 ^
+  5  |  import App from "./App";
+  6  |  import { I18nProvider } from "./i18n";
+      at TransformPluginContext._formatError (file:///E:/New%20folder%20(2)/web/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:49258:41)
+      at TransformPluginContext.error (file:///E:/New%20folder%20(2)/web/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:49253:16)
+      at normalizeUrl (file:///E:/New%20folder%20(2)/web/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:64307:23)
+      at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+      at async file:///E:/New%20folder%20(2)/web/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:64439:39
+      at async Promise.all (index 3)
+      at async TransformPluginContext.transform (file:///E:/New%20folder%20(2)/web/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:64366:7)
+      at async PluginContainer.transform (file:///E:/New%20folder%20(2)/web/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:49099:18)
+      at async loadAndTransform (file:///E:/New%20folder%20(2)/web/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:51978:27)
+      at async viteTransformMiddleware (file:///E:/New%20folder%20(2)/web/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:62106:24)
+11:51:03 PM [vite] Pre-transform error: Failed to resolve import "./pages/EventsPage" from "src/App.tsx". Does the file exist?
+11:51:03 PM [vite] Pre-transform error: Failed to resolve import "./pages/EventsPage" from "src/App.tsx". Does the file exist?
+11:51:03 PM [vite] Pre-transform error: [postcss] E:/New folder (2)/web/src/index.css:1:1: The `font-display` class does not exist. If `font-display` is a custom class, make sure it is defined within a `@layer` directive.
+11:51:03 PM [vite] Pre-transform error: [postcss] E:/New folder (2)/web/src/index.css:1:1: The `font-display` class does not exist. If `font-display` is a custom class, make sure it is defined within a `@layer` directive.
+11:51:03 PM [vite] Pre-transform error: Failed to resolve import "react-router-dom" from "src/layouts/PublicLayout.tsx". Does the file exist?
+11:51:03 PM [vite] Pre-transform error: Failed to resolve import "react-router-dom" from "src/pages/NewsDetailPage.tsx". Does the file exist?
+11:51:03 PM [vite] Pre-transform error: Failed to resolve import "react-router-dom" from "src/pages/NewsListPage.tsx". Does the file exist?
+11:51:03 PM [vite] Pre-transform error: Failed to resolve import "react-router-dom" from "src/pages/HomePage.tsx". Does the file exist?
+11:51:19 PM [vite] Pre-transform error: Failed to resolve import "react-router-dom" from "src/main.tsx". Does the file exist?
+11:51:19 PM [vite] Internal server error: Failed to resolve import "react-router-dom" from "src/main.tsx". Does the file exist?
+  Plugin: vite:import-analysis
+  File: E:/New folder (2)/web/src/main.tsx:3:30
+  2  |  import React from "react";
+  3  |  import ReactDOM from "react-dom/client";
+  4  |  import { BrowserRouter } from "react-router-dom";
+     |                                 ^
+  5  |  import App from "./App";
+  6  |  import { I18nProvider } from "./i18n";
+      at TransformPluginContext._formatError (file:///E:/New%20folder%20(2)/web/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:49258:41)
+      at TransformPluginContext.error (file:///E:/New%20folder%20(2)/web/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:49253:16)
+      at normalizeUrl (file:///E:/New%20folder%20(2)/web/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:64307:23)
+      at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+      at async file:///E:/New%20folder%20(2)/web/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:64439:39
+      at async Promise.all (index 3)
+      at async TransformPluginContext.transform (file:///E:/New%20folder%20(2)/web/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:64366:7)
+      at async PluginContainer.transform (file:///E:/New%20folder%20(2)/web/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:49099:18)
+      at async loadAndTransform (file:///E:/New%20folder%20(2)/web/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:51978:27)
+      at async viteTransformMiddleware (file:///E:/New%20folder%20(2)/web/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:62106:24)
+11:51:19 PM [vite] Pre-transform error: Failed to resolve import "./pages/ClubsPage" from "src/App.tsx". Does the file exist?
+11:51:19 PM [vite] Pre-transform error: Failed to resolve import "./pages/ClubsPage" from "src/App.tsx". Does the file exist?
+11:51:19 PM [vite] Pre-transform error: [postcss] E:/New folder (2)/web/src/index.css:1:1: The `font-display` class does not exist. If `font-display` is a custom class, make sure it is defined within a `@layer` directive.
+11:51:19 PM [vite] Pre-transform error: [postcss] E:/New folder (2)/web/src/index.css:1:1: The `font-display` class does not exist. If `font-display` is a custom class, make sure it is defined within a `@layer` directive.
+11:51:19 PM [vite] Pre-transform error: Failed to resolve import "react-router-dom" from "src/layouts/PublicLayout.tsx". Does the file exist?
+11:51:19 PM [vite] Pre-transform error: Failed to resolve import "react-router-dom" from "src/pages/NewsListPage.tsx". Does the file exist?
+11:51:19 PM [vite] Pre-transform error: Failed to resolve import "react-router-dom" from "src/pages/HomePage.tsx". Does the file exist?
+11:51:19 PM [vite] Pre-transform error: Failed to resolve import "react-router-dom" from "src/pages/NewsDetailPage.tsx". Does the file exist?
+11:51:33 PM [vite] Pre-transform error: Failed to resolve import "react-router-dom" from "src/main.tsx". Does the file exist?
+11:51:33 PM [vite] Pre-transform error: Failed to resolve import "./pages/SafeguardingPage" from "src/App.tsx". Does the file exist?
+11:51:33 PM [vite] Internal server error: Failed to resolve import "react-router-dom" from "src/main.tsx". Does the file exist?
+  Plugin: vite:import-analysis
+  File: E:/New folder (2)/web/src/main.tsx:3:30
+  2  |  import React from "react";
+  3  |  import ReactDOM from "react-dom/client";
+  4  |  import { BrowserRouter } from "react-router-dom";
+     |                                 ^
+  5  |  import App from "./App";
+  6  |  import { I18nProvider } from "./i18n";
+      at TransformPluginContext._formatError (file:///E:/New%20folder%20(2)/web/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:49258:41)
+      at TransformPluginContext.error (file:///E:/New%20folder%20(2)/web/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:49253:16)
+      at normalizeUrl (file:///E:/New%20folder%20(2)/web/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:64307:23)
+      at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+      at async file:///E:/New%20folder%20(2)/web/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:64439:39
+      at async Promise.all (index 3)
+      at async TransformPluginContext.transform (file:///E:/New%20folder%20(2)/web/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:64366:7)
+      at async PluginContainer.transform (file:///E:/New%20folder%20(2)/web/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:49099:18)
+      at async loadAndTransform (file:///E:/New%20folder%20(2)/web/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:51978:27)
+      at async viteTransformMiddleware (file:///E:/New%20folder%20(2)/web/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:62106:24)
+11:51:33 PM [vite] Pre-transform error: [postcss] E:/New folder (2)/web/src/index.css:1:1: The `font-display` class does not exist. If `font-display` is a custom class, make sure it is defined within a `@layer` directive.
+11:51:33 PM [vite] Pre-transform error: [postcss] E:/New folder (2)/web/src/index.css:1:1: The `font-display` class does not exist. If `font-display` is a custom class, make sure it is defined within a `@layer` directive.
+11:51:33 PM [vite] Pre-transform error: Failed to resolve import "react-router-dom" from "src/layouts/PublicLayout.tsx". Does the file exist?
+11:51:33 PM [vite] Pre-transform error: Failed to resolve import "react-router-dom" from "src/pages/NewsListPage.tsx". Does the file exist?
+11:51:33 PM [vite] Pre-transform error: Failed to resolve import "react-router-dom" from "src/pages/NewsDetailPage.tsx". Does the file exist?
+11:51:33 PM [vite] Pre-transform error: Failed to resolve import "react-router-dom" from "src/pages/HomePage.tsx". Does the file exist?
+11:51:33 PM [vite] Pre-transform error: Failed to resolve import "./pages/SafeguardingPage" from "src/App.tsx". Does the file exist?
+11:51:33 PM [vite] Pre-transform error: Failed to resolve import "react-router-dom" from "src/pages/HomePage.tsx". Does the file exist?
+11:51:33 PM [vite] Pre-transform error: Failed to resolve import "react-router-dom" from "src/layouts/PublicLayout.tsx". Does the file exist?
+11:51:33 PM [vite] Pre-transform error: Failed to resolve import "react-router-dom" from "src/pages/NewsDetailPage.tsx". Does the file exist?
+11:51:33 PM [vite] Pre-transform error: Failed to resolve import "react-router-dom" from "src/pages/NewsListPage.tsx". Does the file exist?
+11:51:38 PM [vite] Pre-transform error: Failed to resolve import "react-router-dom" from "src/main.tsx". Does the file exist?
+11:51:38 PM [vite] Pre-transform error: Failed to resolve import "./pages/WatchMatchPage" from "src/App.tsx". Does the file exist?
+11:51:38 PM [vite] Internal server error: Failed to resolve import "react-router-dom" from "src/main.tsx". Does the file exist?
+  Plugin: vite:import-analysis
+  File: E:/New folder (2)/web/src/main.tsx:3:30
+  2  |  import React from "react";
+  3  |  import ReactDOM from "react-dom/client";
+  4  |  import { BrowserRouter } from "react-router-dom";
+     |                                 ^
+  5  |  import App from "./App";
+  6  |  import { I18nProvider } from "./i18n";
+      at TransformPluginContext._formatError (file:///E:/New%20folder%20(2)/web/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:49258:41)
+      at TransformPluginContext.error (file:///E:/New%20folder%20(2)/web/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:49253:16)
+      at normalizeUrl (file:///E:/New%20folder%20(2)/web/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:64307:23)
+      at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+      at async file:///E:/New%20folder%20(2)/web/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:64439:39
+      at async Promise.all (index 3)
+      at async TransformPluginContext.transform (file:///E:/New%20folder%20(2)/web/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:64366:7)
+      at async PluginContainer.transform (file:///E:/New%20folder%20(2)/web/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:49099:18)
+      at async loadAndTransform (file:///E:/New%20folder%20(2)/web/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:51978:27)
+      at async viteTransformMiddleware (file:///E:/New%20folder%20(2)/web/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:62106:24)
+11:51:38 PM [vite] Pre-transform error: [postcss] E:/New folder (2)/web/src/index.css:1:1: The `font-display` class does not exist. If `font-display` is a custom class, make sure it is defined within a `@layer` directive.
+11:51:38 PM [vite] Pre-transform error: [postcss] E:/New folder (2)/web/src/index.css:1:1: The `font-display` class does not exist. If `font-display` is a custom class, make sure it is defined within a `@layer` directive.
+11:51:38 PM [vite] Pre-transform error: Failed to resolve import "react-router-dom" from "src/layouts/PublicLayout.tsx". Does the file exist?
+11:51:38 PM [vite] Pre-transform error: Failed to resolve import "react-router-dom" from "src/pages/NewsDetailPage.tsx". Does the file exist?
+11:51:38 PM [vite] Pre-transform error: Failed to resolve import "react-router-dom" from "src/pages/NewsListPage.tsx". Does the file exist?
+11:51:38 PM [vite] Pre-transform error: Failed to resolve import "react-router-dom" from "src/pages/HomePage.tsx". Does the file exist?
+11:51:38 PM [vite] Pre-transform error: Failed to resolve import "./pages/WatchMatchPage" from "src/App.tsx". Does the file exist?
+11:51:38 PM [vite] Pre-transform error: Failed to resolve import "react-router-dom" from "src/pages/HomePage.tsx". Does the file exist?
+11:51:38 PM [vite] Pre-transform error: Failed to resolve import "react-router-dom" from "src/pages/NewsDetailPage.tsx". Does the file exist?
+11:51:38 PM [vite] Pre-transform error: Failed to resolve import "react-router-dom" from "src/pages/NewsListPage.tsx". Does the file exist?
+11:51:38 PM [vite] Pre-transform error: Failed to resolve import "react-router-dom" from "src/layouts/PublicLayout.tsx". Does the file exist?
+11:51:43 PM [vite] Pre-transform error: Failed to resolve import "react-router-dom" from "src/main.tsx". Does the file exist?
+11:51:43 PM [vite] Pre-transform error: Failed to resolve import "./pages/AboutPage" from "src/App.tsx". Does the file exist?
+11:51:43 PM [vite] Internal server error: Failed to resolve import "react-router-dom" from "src/main.tsx". Does the file exist?
+  Plugin: vite:import-analysis
+  File: E:/New folder (2)/web/src/main.tsx:3:30
+  2  |  import React from "react";
+  3  |  import ReactDOM from "react-dom/client";
+  4  |  import { BrowserRouter } from "react-router-dom";
+     |                                 ^
+  5  |  import App from "./App";
+  6  |  import { I18nProvider } from "./i18n";
+      at TransformPluginContext._formatError (file:///E:/New%20folder%20(2)/web/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:49258:41)
+      at TransformPluginContext.error (file:///E:/New%20folder%20(2)/web/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:49253:16)
+      at normalizeUrl (file:///E:/New%20folder%20(2)/web/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:64307:23)
+      at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+      at async file:///E:/New%20folder%20(2)/web/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:64439:39
+      at async Promise.all (index 3)
+      at async TransformPluginContext.transform (file:///E:/New%20folder%20(2)/web/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:64366:7)
+      at async PluginContainer.transform (file:///E:/New%20folder%20(2)/web/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:49099:18)
+      at async loadAndTransform (file:///E:/New%20folder%20(2)/web/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:51978:27)
+      at async viteTransformMiddleware (file:///E:/New%20folder%20(2)/web/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:62106:24)
+11:51:43 PM [vite] Pre-transform error: [postcss] E:/New folder (2)/web/src/index.css:1:1: The `font-display` class does not exist. If `font-display` is a custom class, make sure it is defined within a `@layer` directive.
+11:51:43 PM [vite] Pre-transform error: [postcss] E:/New folder (2)/web/src/index.css:1:1: The `font-display` class does not exist. If `font-display` is a custom class, make sure it is defined within a `@layer` directive.
+11:51:43 PM [vite] Pre-transform error: Failed to resolve import "react-router-dom" from "src/layouts/PublicLayout.tsx". Does the file exist?
+11:51:43 PM [vite] Pre-transform error: Failed to resolve import "react-router-dom" from "src/pages/NewsDetailPage.tsx". Does the file exist?
+11:51:43 PM [vite] Pre-transform error: Failed to resolve import "react-router-dom" from "src/pages/NewsListPage.tsx". Does the file exist?
+11:51:43 PM [vite] Pre-transform error: Failed to resolve import "react-router-dom" from "src/pages/HomePage.tsx". Does the file exist?
+11:51:43 PM [vite] Pre-transform error: Failed to resolve import "./pages/AboutPage" from "src/App.tsx". Does the file exist?
+11:51:43 PM [vite] Pre-transform error: Failed to resolve import "react-router-dom" from "src/pages/HomePage.tsx". Does the file exist?
+11:51:43 PM [vite] Pre-transform error: Failed to resolve import "react-router-dom" from "src/pages/NewsListPage.tsx". Does the file exist?
+11:51:43 PM [vite] Pre-transform error: Failed to resolve import "react-router-dom" from "src/pages/NewsDetailPage.tsx". Does the file exist?
+11:51:43 PM [vite] Pre-transform error: Failed to resolve import "react-router-dom" from "src/layouts/PublicLayout.tsx". Does the file exist?
+11:51:53 PM [vite] Pre-transform error: Failed to resolve import "react-router-dom" from "src/main.tsx". Does the file exist?
+11:51:53 PM [vite] Internal server error: Failed to resolve import "react-router-dom" from "src/main.tsx". Does the file exist?
+  Plugin: vite:import-analysis
+  File: E:/New folder (2)/web/src/main.tsx:3:30
+  2  |  import React from "react";
+  3  |  import ReactDOM from "react-dom/client";
+  4  |  import { BrowserRouter } from "react-router-dom";
+     |                                 ^
+  5  |  import App from "./App";
+  6  |  import { I18nProvider } from "./i18n";
+      at TransformPluginContext._formatError (file:///E:/New%20folder%20(2)/web/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:49258:41)
+      at TransformPluginContext.error (file:///E:/New%20folder%20(2)/web/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:49253:16)
+      at normalizeUrl (file:///E:/New%20folder%20(2)/web/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:64307:23)
+      at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+      at async file:///E:/New%20folder%20(2)/web/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:64439:39
+      at async Promise.all (index 3)
+      at async TransformPluginContext.transform (file:///E:/New%20folder%20(2)/web/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:64366:7)
+      at async PluginContainer.transform (file:///E:/New%20folder%20(2)/web/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:49099:18)
+      at async loadAndTransform (file:///E:/New%20folder%20(2)/web/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:51978:27)
+      at async viteTransformMiddleware (file:///E:/New%20folder%20(2)/web/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:62106:24)
+11:51:53 PM [vite] Pre-transform error: Failed to resolve import "./pages/NotFoundPage" from "src/App.tsx". Does the file exist?
+11:51:53 PM [vite] Pre-transform error: Failed to resolve import "./pages/NotFoundPage" from "src/App.tsx". Does the file exist?
+11:51:53 PM [vite] Pre-transform error: [postcss] E:/New folder (2)/web/src/index.css:1:1: The `font-display` class does not exist. If `font-display` is a custom class, make sure it is defined within a `@layer` directive.
+11:51:53 PM [vite] Pre-transform error: [postcss] E:/New folder (2)/web/src/index.css:1:1: The `font-display` class does not exist. If `font-display` is a custom class, make sure it is defined within a `@layer` directive.
+11:51:53 PM [vite] Pre-transform error: Failed to resolve import "react-router-dom" from "src/layouts/PublicLayout.tsx". Does the file exist?
+11:51:53 PM [vite] Pre-transform error: Failed to resolve import "react-router-dom" from "src/pages/NewsDetailPage.tsx". Does the file exist?
+11:51:53 PM [vite] Pre-transform error: Failed to resolve import "react-router-dom" from "src/pages/AboutPage.tsx". Does the file exist?
+11:51:53 PM [vite] Pre-transform error: Failed to resolve import "react-router-dom" from "src/pages/NewsListPage.tsx". Does the file exist?
+11:51:53 PM [vite] Pre-transform error: Failed to resolve import "react-router-dom" from "src/pages/HomePage.tsx". Does the file exist?
+11:51:58 PM [vite] Pre-transform error: Failed to resolve import "react-router-dom" from "src/main.tsx". Does the file exist?
+11:51:58 PM [vite] Pre-transform error: Failed to resolve import "react-router-dom" from "src/App.tsx". Does the file exist?
+11:51:58 PM [vite] Internal server error: Failed to resolve import "react-router-dom" from "src/main.tsx". Does the file exist?
+  Plugin: vite:import-analysis
+  File: E:/New folder (2)/web/src/main.tsx:3:30
+  2  |  import React from "react";
+  3  |  import ReactDOM from "react-dom/client";
+  4  |  import { BrowserRouter } from "react-router-dom";
+     |                                 ^
+  5  |  import App from "./App";
+  6  |  import { I18nProvider } from "./i18n";
+      at TransformPluginContext._formatError (file:///E:/New%20folder%20(2)/web/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:49258:41)
+      at TransformPluginContext.error (file:///E:/New%20folder%20(2)/web/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:49253:16)
+      at normalizeUrl (file:///E:/New%20folder%20(2)/web/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:64307:23)
+      at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+      at async file:///E:/New%20folder%20(2)/web/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:64439:39
+      at async Promise.all (index 3)
+      at async TransformPluginContext.transform (file:///E:/New%20folder%20(2)/web/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:64366:7)
+      at async PluginContainer.transform (file:///E:/New%20folder%20(2)/web/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:49099:18)
+      at async loadAndTransform (file:///E:/New%20folder%20(2)/web/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:51978:27)
+      at async viteTransformMiddleware (file:///E:/New%20folder%20(2)/web/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:62106:24)
+11:51:58 PM [vite] Pre-transform error: [postcss] E:/New folder (2)/web/src/index.css:1:1: The `font-display` class does not exist. If `font-display` is a custom class, make sure it is defined within a `@layer` directive.
+11:51:58 PM [vite] Pre-transform error: [postcss] E:/New folder (2)/web/src/index.css:1:1: The `font-display` class does not exist. If `font-display` is a custom class, make sure it is defined within a `@layer` directive.
+11:51:58 PM [vite] Pre-transform error: Failed to resolve import "react-router-dom" from "src/layouts/PublicLayout.tsx". Does the file exist?
+11:51:58 PM [vite] Pre-transform error: Failed to resolve import "react-router-dom" from "src/App.tsx". Does the file exist?
+11:51:58 PM [vite] Pre-transform error: Failed to resolve import "react-router-dom" from "src/pages/AboutPage.tsx". Does the file exist?
+11:51:58 PM [vite] Pre-transform error: Failed to resolve import "react-router-dom" from "src/pages/NotFoundPage.tsx". Does the file exist?
+11:51:58 PM [vite] Pre-transform error: Failed to resolve import "react-router-dom" from "src/pages/NewsDetailPage.tsx". Does the file exist?
+11:51:58 PM [vite] Pre-transform error: Failed to resolve import "react-router-dom" from "src/pages/NewsListPage.tsx". Does the file exist?
+11:51:58 PM [vite] Pre-transform error: Failed to resolve import "react-router-dom" from "src/pages/AboutPage.tsx". Does the file exist?
+11:51:58 PM [vite] Pre-transform error: Failed to resolve import "react-router-dom" from "src/pages/NotFoundPage.tsx". Does the file exist?
+11:51:58 PM [vite] Pre-transform error: Failed to resolve import "react-router-dom" from "src/pages/NewsDetailPage.tsx". Does the file exist?
+11:51:58 PM [vite] Pre-transform error: Failed to resolve import "react-router-dom" from "src/pages/NewsListPage.tsx". Does the file exist?
+11:51:58 PM [vite] Pre-transform error: Failed to resolve import "react-router-dom" from "src/pages/HomePage.tsx". Does the file exist?
+11:51:58 PM [vite] Pre-transform error: Failed to resolve import "react-router-dom" from "src/pages/HomePage.tsx". Does the file exist?
+11:51:58 PM [vite] Pre-transform error: Failed to resolve import "react-router-dom" from "src/layouts/PublicLayout.tsx". Does the file exist?
+11:52:06 PM [vite] Pre-transform error: Failed to resolve import "react-router-dom" from "src/main.tsx". Does the file exist?
+11:52:06 PM [vite] Pre-transform error: [postcss] E:/New folder (2)/web/src/index.css:1:1: The `font-display` class does not exist. If `font-display` is a custom class, make sure it is defined within a `@layer` directive.
+11:52:06 PM [vite] Pre-transform error: Failed to resolve import "react-router-dom" from "src/App.tsx". Does the file exist?
+11:52:06 PM [vite] Internal server error: Failed to resolve import "react-router-dom" from "src/main.tsx". Does the file exist?
+  Plugin: vite:import-analysis
+  File: E:/New folder (2)/web/src/main.tsx:3:30
+  2  |  import React from "react";
+  3  |  import ReactDOM from "react-dom/client";
+  4  |  import { BrowserRouter } from "react-router-dom";
+     |                                 ^
+  5  |  import App from "./App";
+  6  |  import { I18nProvider } from "./i18n";
+      at TransformPluginContext._formatError (file:///E:/New%20folder%20(2)/web/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:49258:41)
+      at TransformPluginContext.error (file:///E:/New%20folder%20(2)/web/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:49253:16)
+      at normalizeUrl (file:///E:/New%20folder%20(2)/web/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:64307:23)
+      at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+      at async file:///E:/New%20folder%20(2)/web/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:64439:39
+      at async Promise.all (index 3)
+      at async TransformPluginContext.transform (file:///E:/New%20folder%20(2)/web/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:64366:7)
+      at async PluginContainer.transform (file:///E:/New%20folder%20(2)/web/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:49099:18)
+      at async loadAndTransform (file:///E:/New%20folder%20(2)/web/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:51978:27)
+      at async viteTransformMiddleware (file:///E:/New%20folder%20(2)/web/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:62106:24)
+11:52:06 PM [vite] Pre-transform error: Failed to resolve import "react-router-dom" from "src/pages/NewsListPage.tsx". Does the file exist?
+11:52:06 PM [vite] Pre-transform error: Failed to resolve import "react-router-dom" from "src/pages/HomePage.tsx". Does the file exist?
+11:52:06 PM [vite] Pre-transform error: [postcss] E:/New folder (2)/web/src/index.css:1:1: The `font-display` class does not exist. If `font-display` is a custom class, make sure it is defined within a `@layer` directive.
+11:52:06 PM [vite] Pre-transform error: Failed to resolve import "react-router-dom" from "src/pages/NotFoundPage.tsx". Does the file exist?
+11:52:06 PM [vite] Pre-transform error: Failed to resolve import "react-router-dom" from "src/pages/NewsDetailPage.tsx". Does the file exist?
+11:52:06 PM [vite] Pre-transform error: Failed to resolve import "react-router-dom" from "src/pages/AboutPage.tsx". Does the file exist?
+11:52:06 PM [vite] Pre-transform error: Failed to resolve import "react-router-dom" from "src/layouts/PublicLayout.tsx". Does the file exist?
+11:52:06 PM [vite] Pre-transform error: Failed to resolve import "react-router-dom" from "src/App.tsx". Does the file exist?
+11:52:06 PM [vite] Pre-transform error: Failed to resolve import "react-router-dom" from "src/layouts/PublicLayout.tsx". Does the file exist?
+11:52:06 PM [vite] Pre-transform error: Failed to resolve import "react-router-dom" from "src/pages/NewsDetailPage.tsx". Does the file exist?
+11:52:06 PM [vite] Pre-transform error: Failed to resolve import "react-router-dom" from "src/pages/NotFoundPage.tsx". Does the file exist?
+11:52:06 PM [vite] Pre-transform error: Failed to resolve import "react-router-dom" from "src/pages/AboutPage.tsx". Does the file exist?
+11:52:06 PM [vite] Pre-transform error: Failed to resolve import "react-router-dom" from "src/pages/NewsListPage.tsx". Does the file exist?
+11:52:06 PM [vite] Pre-transform error: Failed to resolve import "react-router-dom" from "src/pages/HomePage.tsx". Does the file exist?
+11:52:12 PM [vite] Pre-transform error: Failed to resolve import "react-router-dom" from "src/main.tsx". Does the file exist?
+11:52:12 PM [vite] Pre-transform error: [postcss] E:/New folder (2)/web/src/index.css:1:1: The `font-display` class does not exist. If `font-display` is a custom class, make sure it is defined within a `@layer` directive.
+11:52:12 PM [vite] Pre-transform error: Failed to resolve import "react-router-dom" from "src/App.tsx". Does the file exist?
+11:52:12 PM [vite] Pre-transform error: Failed to resolve import "react-router-dom" from "src/App.tsx". Does the file exist?
+11:52:12 PM [vite] Internal server error: Failed to resolve import "react-router-dom" from "src/main.tsx". Does the file exist?
+  Plugin: vite:import-analysis
+  File: E:/New folder (2)/web/src/main.tsx:3:30
+  2  |  import React from "react";
+  3  |  import ReactDOM from "react-dom/client";
+  4  |  import { BrowserRouter } from "react-router-dom";
+     |                                 ^
+  5  |  import App from "./App";
+  6  |  import { I18nProvider } from "./i18n";
+      at TransformPluginContext._formatError (file:///E:/New%20folder%20(2)/web/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:49258:41)
+      at TransformPluginContext.error (file:///E:/New%20folder%20(2)/web/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:49253:16)
+      at normalizeUrl (file:///E:/New%20folder%20(2)/web/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:64307:23)
+      at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+      at async file:///E:/New%20folder%20(2)/web/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:64439:39
+      at async Promise.all (index 3)
+      at async TransformPluginContext.transform (file:///E:/New%20folder%20(2)/web/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:64366:7)
+      at async PluginContainer.transform (file:///E:/New%20folder%20(2)/web/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:49099:18)
+      at async loadAndTransform (file:///E:/New%20folder%20(2)/web/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:51978:27)
+      at async viteTransformMiddleware (file:///E:/New%20folder%20(2)/web/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:62106:24)
+11:52:13 PM [vite] Pre-transform error: [postcss] E:/New folder (2)/web/src/index.css:1:1: The `font-display` class does not exist. If `font-display` is a custom class, make sure it is defined within a `@layer` directive.
+11:52:13 PM [vite] Pre-transform error: Failed to resolve import "react-router-dom" from "src/layouts/PublicLayout.tsx". Does the file exist?
+11:52:13 PM [vite] Pre-transform error: Failed to resolve import "react-router-dom" from "src/pages/AboutPage.tsx". Does the file exist?
+11:52:13 PM [vite] Pre-transform error: Failed to resolve import "react-router-dom" from "src/pages/NewsListPage.tsx". Does the file exist?
+11:52:13 PM [vite] Pre-transform error: Failed to resolve import "react-router-dom" from "src/pages/NewsDetailPage.tsx". Does the file exist?
+11:52:13 PM [vite] Pre-transform error: Failed to resolve import "react-router-dom" from "src/pages/NotFoundPage.tsx". Does the file exist?
+11:52:13 PM [vite] Pre-transform error: Failed to resolve import "react-router-dom" from "src/pages/HomePage.tsx". Does the file exist?
+11:52:16 PM [vite] Pre-transform error: Failed to resolve import "react-router-dom" from "src/main.tsx". Does the file exist?
+11:52:16 PM [vite] Pre-transform error: [postcss] E:/New folder (2)/web/src/index.css:1:1: The `font-display` class does not exist. If `font-display` is a custom class, make sure it is defined within a `@layer` directive.
+11:52:16 PM [vite] Pre-transform error: Failed to resolve import "react-router-dom" from "src/App.tsx". Does the file exist?
+11:52:16 PM [vite] Internal server error: Failed to resolve import "react-router-dom" from "src/main.tsx". Does the file exist?
+  Plugin: vite:import-analysis
+  File: E:/New folder (2)/web/src/main.tsx:3:30
+  2  |  import React from "react";
+  3  |  import ReactDOM from "react-dom/client";
+  4  |  import { BrowserRouter } from "react-router-dom";
+     |                                 ^
+  5  |  import App from "./App";
+  6  |  import { I18nProvider } from "./i18n";
+      at TransformPluginContext._formatError (file:///E:/New%20folder%20(2)/web/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:49258:41)
+      at TransformPluginContext.error (file:///E:/New%20folder%20(2)/web/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:49253:16)
+      at normalizeUrl (file:///E:/New%20folder%20(2)/web/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:64307:23)
+      at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+      at async file:///E:/New%20folder%20(2)/web/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:64439:39
+      at async Promise.all (index 3)
+      at async TransformPluginContext.transform (file:///E:/New%20folder%20(2)/web/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:64366:7)
+      at async PluginContainer.transform (file:///E:/New%20folder%20(2)/web/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:49099:18)
+      at async loadAndTransform (file:///E:/New%20folder%20(2)/web/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:51978:27)
+      at async viteTransformMiddleware (file:///E:/New%20folder%20(2)/web/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:62106:24)
+11:52:16 PM [vite] Pre-transform error: Failed to resolve import "react-router-dom" from "src/App.tsx". Does the file exist?
+11:52:16 PM [vite] Pre-transform error: [postcss] E:/New folder (2)/web/src/index.css:1:1: The `font-display` class does not exist. If `font-display` is a custom class, make sure it is defined within a `@layer` directive.
+11:52:16 PM [vite] Pre-transform error: Failed to resolve import "react-router-dom" from "src/layouts/PublicLayout.tsx". Does the file exist?
+11:52:16 PM [vite] Pre-transform error: Failed to resolve import "react-router-dom" from "src/pages/NotFoundPage.tsx". Does the file exist?
+11:52:16 PM [vite] Pre-transform error: Failed to resolve import "react-router-dom" from "src/pages/NewsListPage.tsx". Does the file exist?
+11:52:16 PM [vite] Pre-transform error: Failed to resolve import "react-router-dom" from "src/pages/AboutPage.tsx". Does the file exist?
+11:52:16 PM [vite] Pre-transform error: Failed to resolve import "react-router-dom" from "src/pages/NewsDetailPage.tsx". Does the file exist?
+11:52:16 PM [vite] Pre-transform error: Failed to resolve import "react-router-dom" from "src/pages/HomePage.tsx". Does the file exist?
+11:52:18 PM [vite] Pre-transform error: Failed to resolve import "react-router-dom" from "src/main.tsx". Does the file exist?
+11:52:18 PM [vite] Pre-transform error: [postcss] E:/New folder (2)/web/src/index.css:1:1: The `font-display` class does not exist. If `font-display` is a custom class, make sure it is defined within a `@layer` directive.
+11:52:18 PM [vite] Pre-transform error: Failed to resolve import "react-router-dom" from "src/App.tsx". Does the file exist?
+11:52:18 PM [vite] Internal server error: Failed to resolve import "react-router-dom" from "src/main.tsx". Does the file exist?
+  Plugin: vite:import-analysis
+  File: E:/New folder (2)/web/src/main.tsx:3:30
+  2  |  import React from "react";
+  3  |  import ReactDOM from "react-dom/client";
+  4  |  import { BrowserRouter } from "react-router-dom";
+     |                                 ^
+  5  |  import App from "./App";
+  6  |  import { I18nProvider } from "./i18n";
+      at TransformPluginContext._formatError (file:///E:/New%20folder%20(2)/web/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:49258:41)
+      at TransformPluginContext.error (file:///E:/New%20folder%20(2)/web/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:49253:16)
+      at normalizeUrl (file:///E:/New%20folder%20(2)/web/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:64307:23)
+      at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+      at async file:///E:/New%20folder%20(2)/web/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:64439:39
+      at async Promise.all (index 3)
+      at async TransformPluginContext.transform (file:///E:/New%20folder%20(2)/web/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:64366:7)
+      at async PluginContainer.transform (file:///E:/New%20folder%20(2)/web/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:49099:18)
+      at async loadAndTransform (file:///E:/New%20folder%20(2)/web/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:51978:27)
+      at async viteTransformMiddleware (file:///E:/New%20folder%20(2)/web/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:62106:24)
+11:52:18 PM [vite] Pre-transform error: [postcss] E:/New folder (2)/web/src/index.css:1:1: The `font-display` class does not exist. If `font-display` is a custom class, make sure it is defined within a `@layer` directive.
+11:52:18 PM [vite] Pre-transform error: Failed to resolve import "react-router-dom" from "src/layouts/PublicLayout.tsx". Does the file exist?
+11:52:18 PM [vite] Pre-transform error: Failed to resolve import "react-router-dom" from "src/pages/NotFoundPage.tsx". Does the file exist?
+11:52:18 PM [vite] Pre-transform error: Failed to resolve import "react-router-dom" from "src/pages/NewsDetailPage.tsx". Does the file exist?
+11:52:18 PM [vite] Pre-transform error: Failed to resolve import "react-router-dom" from "src/pages/NewsListPage.tsx". Does the file exist?
+11:52:18 PM [vite] Pre-transform error: Failed to resolve import "react-router-dom" from "src/pages/AboutPage.tsx". Does the file exist?
+11:52:19 PM [vite] Pre-transform error: Failed to resolve import "react-router-dom" from "src/pages/HomePage.tsx". Does the file exist?
+11:52:19 PM [vite] Pre-transform error: Failed to resolve import "react-router-dom" from "src/pages/HomePage.tsx". Does the file exist?
+11:52:19 PM [vite] Pre-transform error: Failed to resolve import "react-router-dom" from "src/App.tsx". Does the file exist?
+11:52:19 PM [vite] Pre-transform error: Failed to resolve import "react-router-dom" from "src/pages/NewsListPage.tsx". Does the file exist?
+11:52:19 PM [vite] Pre-transform error: Failed to resolve import "react-router-dom" from "src/pages/NotFoundPage.tsx". Does the file exist?
+11:52:19 PM [vite] Pre-transform error: Failed to resolve import "react-router-dom" from "src/pages/NewsDetailPage.tsx". Does the file exist?
+11:52:19 PM [vite] Pre-transform error: Failed to resolve import "react-router-dom" from "src/pages/AboutPage.tsx". Does the file exist?
+11:52:19 PM [vite] Pre-transform error: Failed to resolve import "react-router-dom" from "src/layouts/PublicLayout.tsx". Does the file exist?
+11:52:21 PM [vite] Pre-transform error: Failed to resolve import "react-router-dom" from "src/main.tsx". Does the file exist?
+11:52:21 PM [vite] Pre-transform error: [postcss] E:/New folder (2)/web/src/index.css:1:1: The `font-display` class does not exist. If `font-display` is a custom class, make sure it is defined within a `@layer` directive.
+11:52:21 PM [vite] Pre-transform error: Failed to resolve import "react-router-dom" from "src/App.tsx". Does the file exist?
+11:52:21 PM [vite] Internal server error: Failed to resolve import "react-router-dom" from "src/main.tsx". Does the file exist?
+  Plugin: vite:import-analysis
+  File: E:/New folder (2)/web/src/main.tsx:3:30
+  2  |  import React from "react";
+  3  |  import ReactDOM from "react-dom/client";
+  4  |  import { BrowserRouter } from "react-router-dom";
+     |                                 ^
+  5  |  import App from "./App";
+  6  |  import { I18nProvider } from "./i18n";
+      at TransformPluginContext._formatError (file:///E:/New%20folder%20(2)/web/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:49258:41)
+      at TransformPluginContext.error (file:///E:/New%20folder%20(2)/web/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:49253:16)
+      at normalizeUrl (file:///E:/New%20folder%20(2)/web/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:64307:23)
+      at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+      at async file:///E:/New%20folder%20(2)/web/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:64439:39
+      at async Promise.all (index 3)
+      at async TransformPluginContext.transform (file:///E:/New%20folder%20(2)/web/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:64366:7)
+      at async PluginContainer.transform (file:///E:/New%20folder%20(2)/web/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:49099:18)
+      at async loadAndTransform (file:///E:/New%20folder%20(2)/web/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:51978:27)
+      at async viteTransformMiddleware (file:///E:/New%20folder%20(2)/web/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:62106:24)
+11:52:21 PM [vite] Pre-transform error: [postcss] E:/New folder (2)/web/src/index.css:1:1: The `font-display` class does not exist. If `font-display` is a custom class, make sure it is defined within a `@layer` directive.
+11:52:21 PM [vite] Pre-transform error: Failed to resolve import "react-router-dom" from "src/layouts/PublicLayout.tsx". Does the file exist?
+11:52:21 PM [vite] Pre-transform error: Failed to resolve import "react-router-dom" from "src/pages/NewsDetailPage.tsx". Does the file exist?
+11:52:21 PM [vite] Pre-transform error: Failed to resolve import "react-router-dom" from "src/pages/NotFoundPage.tsx". Does the file exist?
+11:52:21 PM [vite] Pre-transform error: Failed to resolve import "react-router-dom" from "src/pages/NewsListPage.tsx". Does the file exist?
+11:52:21 PM [vite] Pre-transform error: Failed to resolve import "react-router-dom" from "src/pages/AboutPage.tsx". Does the file exist?
+11:52:21 PM [vite] Pre-transform error: Failed to resolve import "react-router-dom" from "src/pages/NewsListPage.tsx". Does the file exist?
+11:52:21 PM [vite] Pre-transform error: Failed to resolve import "react-router-dom" from "src/App.tsx". Does the file exist?
+11:52:21 PM [vite] Pre-transform error: Failed to resolve import "react-router-dom" from "src/pages/AboutPage.tsx". Does the file exist?
+11:52:21 PM [vite] Pre-transform error: Failed to resolve import "react-router-dom" from "src/pages/HomePage.tsx". Does the file exist?
+11:52:21 PM [vite] Pre-transform error: Failed to resolve import "react-router-dom" from "src/pages/HomePage.tsx". Does the file exist?
+11:52:21 PM [vite] Pre-transform error: Failed to resolve import "react-router-dom" from "src/layouts/PublicLayout.tsx". Does the file exist?
+11:52:21 PM [vite] Pre-transform error: Failed to resolve import "react-router-dom" from "src/pages/NewsDetailPage.tsx". Does the file exist?
+11:52:21 PM [vite] Pre-transform error: Failed to resolve import "react-router-dom" from "src/pages/NotFoundPage.tsx". Does the file exist?
+11:52:23 PM [vite] Pre-transform error: Failed to resolve import "react-router-dom" from "src/main.tsx". Does the file exist?
+11:52:23 PM [vite] Pre-transform error: [postcss] E:/New folder (2)/web/src/index.css:1:1: The `font-display` class does not exist. If `font-display` is a custom class, make sure it is defined within a `@layer` directive.
+11:52:23 PM [vite] Pre-transform error: Failed to resolve import "react-router-dom" from "src/App.tsx". Does the file exist?
+11:52:23 PM [vite] Internal server error: Failed to resolve import "react-router-dom" from "src/main.tsx". Does the file exist?
+  Plugin: vite:import-analysis
+  File: E:/New folder (2)/web/src/main.tsx:3:30
+  2  |  import React from "react";
+  3  |  import ReactDOM from "react-dom/client";
+  4  |  import { BrowserRouter } from "react-router-dom";
+     |                                 ^
+  5  |  import App from "./App";
+  6  |  import { I18nProvider } from "./i18n";
+      at TransformPluginContext._formatError (file:///E:/New%20folder%20(2)/web/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:49258:41)
+      at TransformPluginContext.error (file:///E:/New%20folder%20(2)/web/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:49253:16)
+      at normalizeUrl (file:///E:/New%20folder%20(2)/web/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:64307:23)
+      at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+      at async file:///E:/New%20folder%20(2)/web/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:64439:39
+      at async Promise.all (index 3)
+      at async TransformPluginContext.transform (file:///E:/New%20folder%20(2)/web/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:64366:7)
+      at async PluginContainer.transform (file:///E:/New%20folder%20(2)/web/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:49099:18)
+      at async loadAndTransform (file:///E:/New%20folder%20(2)/web/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:51978:27)
+      at async viteTransformMiddleware (file:///E:/New%20folder%20(2)/web/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:62106:24)
+11:52:23 PM [vite] Pre-transform error: [postcss] E:/New folder (2)/web/src/index.css:1:1: The `font-display` class does not exist. If `font-display` is a custom class, make sure it is defined within a `@layer` directive.
+11:52:23 PM [vite] Pre-transform error: Failed to resolve import "react-router-dom" from "src/pages/NewsListPage.tsx". Does the file exist?
+11:52:23 PM [vite] Pre-transform error: Failed to resolve import "react-router-dom" from "src/pages/NotFoundPage.tsx". Does the file exist?
+11:52:23 PM [vite] Pre-transform error: Failed to resolve import "react-router-dom" from "src/pages/AboutPage.tsx". Does the file exist?
+11:52:23 PM [vite] Pre-transform error: Failed to resolve import "react-router-dom" from "src/pages/NewsDetailPage.tsx". Does the file exist?
+11:52:23 PM [vite] Pre-transform error: Failed to resolve import "react-router-dom" from "src/App.tsx". Does the file exist?
+11:52:23 PM [vite] Pre-transform error: Failed to resolve import "react-router-dom" from "src/pages/AboutPage.tsx". Does the file exist?
+11:52:23 PM [vite] Pre-transform error: Failed to resolve import "react-router-dom" from "src/pages/NewsDetailPage.tsx". Does the file exist?
+11:52:23 PM [vite] Pre-transform error: Failed to resolve import "react-router-dom" from "src/layouts/PublicLayout.tsx". Does the file exist?
+11:52:23 PM [vite] Pre-transform error: Failed to resolve import "react-router-dom" from "src/layouts/PublicLayout.tsx". Does the file exist?
+11:52:23 PM [vite] Pre-transform error: Failed to resolve import "react-router-dom" from "src/pages/HomePage.tsx". Does the file exist?
+11:52:23 PM [vite] Pre-transform error: Failed to resolve import "react-router-dom" from "src/pages/HomePage.tsx". Does the file exist?
+11:52:23 PM [vite] Pre-transform error: Failed to resolve import "react-router-dom" from "src/pages/NewsListPage.tsx". Does the file exist?
+11:52:23 PM [vite] Pre-transform error: Failed to resolve import "react-router-dom" from "src/pages/NotFoundPage.tsx". Does the file exist?
+11:54:42 PM [vite] Pre-transform error: [postcss] E:/New folder (2)/web/src/index.css:1:1: The `font-display` class does not exist. If `font-display` is a custom class, make sure it is defined within a `@layer` directive.
+11:54:42 PM [vite] Pre-transform error: [postcss] E:/New folder (2)/web/src/index.css:1:1: The `font-display` class does not exist. If `font-display` is a custom class, make sure it is defined within a `@layer` directive.
+11:54:42 PM [vite] Internal server error: [postcss] E:/New folder (2)/web/src/index.css:1:1: The `font-display` class does not exist. If `font-display` is a custom class, make sure it is defined within a `@layer` directive.
+  Plugin: vite:css
+  File: E:/New folder (2)/web/src/index.css:1:0
+  1  |  @tailwind base;
+     |  ^
+  2  |  @tailwind components;
+  3  |  @tailwind utilities;
+      at Input.error (E:\New folder (2)\web\node_modules\postcss\lib\input.js:135:16)
+      at AtRule.error (E:\New folder (2)\web\node_modules\postcss\lib\node.js:146:32)
+      at processApply (E:\New folder (2)\web\node_modules\tailwindcss\lib\lib\expandApplyAtRules.js:380:29)
+      at E:\New folder (2)\web\node_modules\tailwindcss\lib\lib\expandApplyAtRules.js:551:9
+      at E:\New folder (2)\web\node_modules\tailwindcss\lib\processTailwindFeatures.js:55:50
+      at async plugins (E:\New folder (2)\web\node_modules\tailwindcss\lib\plugin.js:38:17)
+      at async LazyResult.runAsync (E:\New folder (2)\web\node_modules\postcss\lib\lazy-result.js:293:11)
+      at async compileCSS (file:///E:/New%20folder%20(2)/web/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:36898:21)
+      at async TransformPluginContext.transform (file:///E:/New%20folder%20(2)/web/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:36171:11)
+      at async PluginContainer.transform (file:///E:/New%20folder%20(2)/web/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:49099:18)
+      at async loadAndTransform (file:///E:/New%20folder%20(2)/web/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:51978:27)
+      at async viteTransformMiddleware (file:///E:/New%20folder%20(2)/web/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:62106:24)
+11:54:44 PM [vite] Pre-transform error: [postcss] E:/New folder (2)/web/src/index.css:1:1: The `font-display` class does not exist. If `font-display` is a custom class, make sure it is defined within a `@layer` directive.
+11:54:44 PM [vite] Pre-transform error: [postcss] E:/New folder (2)/web/src/index.css:1:1: The `font-display` class does not exist. If `font-display` is a custom class, make sure it is defined within a `@layer` directive.
+11:54:44 PM [vite] Internal server error: [postcss] E:/New folder (2)/web/src/index.css:1:1: The `font-display` class does not exist. If `font-display` is a custom class, make sure it is defined within a `@layer` directive.
+  Plugin: vite:css
+  File: E:/New folder (2)/web/src/index.css:1:0
+  1  |  @tailwind base;
+     |  ^
+  2  |  @tailwind components;
+  3  |  @tailwind utilities;
+      at Input.error (E:\New folder (2)\web\node_modules\postcss\lib\input.js:135:16)
+      at AtRule.error (E:\New folder (2)\web\node_modules\postcss\lib\node.js:146:32)
+      at processApply (E:\New folder (2)\web\node_modules\tailwindcss\lib\lib\expandApplyAtRules.js:380:29)
+      at E:\New folder (2)\web\node_modules\tailwindcss\lib\lib\expandApplyAtRules.js:551:9
+      at E:\New folder (2)\web\node_modules\tailwindcss\lib\processTailwindFeatures.js:55:50
+      at async plugins (E:\New folder (2)\web\node_modules\tailwindcss\lib\plugin.js:38:17)
+      at async LazyResult.runAsync (E:\New folder (2)\web\node_modules\postcss\lib\lazy-result.js:293:11)
+      at async compileCSS (file:///E:/New%20folder%20(2)/web/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:36898:21)
+      at async TransformPluginContext.transform (file:///E:/New%20folder%20(2)/web/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:36171:11)
+      at async PluginContainer.transform (file:///E:/New%20folder%20(2)/web/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:49099:18)
+      at async loadAndTransform (file:///E:/New%20folder%20(2)/web/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:51978:27)
+      at async viteTransformMiddleware (file:///E:/New%20folder%20(2)/web/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:62106:24)
+11:59:22 PM [vite] Pre-transform error: [postcss] E:/New folder (2)/web/src/index.css:1:1: The `font-display` class does not exist. If `font-display` is a custom class, make sure it is defined within a `@layer` directive.
+11:59:22 PM [vite] Internal server error: [postcss] E:/New folder (2)/web/src/index.css:1:1: The `font-display` class does not exist. If `font-display` is a custom class, make sure it is defined within a `@layer` directive.
+  Plugin: vite:css
+  File: E:/New folder (2)/web/src/index.css:1:0
+  1  |  @tailwind base;
+     |  ^
+  2  |  @tailwind components;
+  3  |  @tailwind utilities;
+      at Input.error (E:\New folder (2)\web\node_modules\postcss\lib\input.js:135:16)
+      at AtRule.error (E:\New folder (2)\web\node_modules\postcss\lib\node.js:146:32)
+      at processApply (E:\New folder (2)\web\node_modules\tailwindcss\lib\lib\expandApplyAtRules.js:380:29)
+      at E:\New folder (2)\web\node_modules\tailwindcss\lib\lib\expandApplyAtRules.js:551:9
+      at E:\New folder (2)\web\node_modules\tailwindcss\lib\processTailwindFeatures.js:55:50
+      at async plugins (E:\New folder (2)\web\node_modules\tailwindcss\lib\plugin.js:38:17)
+      at async LazyResult.runAsync (E:\New folder (2)\web\node_modules\postcss\lib\lazy-result.js:293:11)
+      at async compileCSS (file:///E:/New%20folder%20(2)/web/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:36898:21)
+      at async TransformPluginContext.transform (file:///E:/New%20folder%20(2)/web/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:36171:11)
+      at async PluginContainer.transform (file:///E:/New%20folder%20(2)/web/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:49099:18)
+      at async loadAndTransform (file:///E:/New%20folder%20(2)/web/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:51978:27)
+      at async viteTransformMiddleware (file:///E:/New%20folder%20(2)/web/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:62106:24)
+11:59:25 PM [vite] Pre-transform error: [postcss] E:/New folder (2)/web/src/index.css:1:1: The `font-heading` class does not exist. If `font-heading` is a custom class, make sure it is defined within a `@layer` directive.
+11:59:25 PM [vite] Internal server error: [postcss] E:/New folder (2)/web/src/index.css:1:1: The `font-heading` class does not exist. If `font-heading` is a custom class, make sure it is defined within a `@layer` directive.
+  Plugin: vite:css
+  File: E:/New folder (2)/web/src/index.css:1:0
+  1  |  @tailwind base;
+     |  ^
+  2  |  @tailwind components;
+  3  |  @tailwind utilities;
+      at Input.error (E:\New folder (2)\web\node_modules\postcss\lib\input.js:135:16)
+      at AtRule.error (E:\New folder (2)\web\node_modules\postcss\lib\node.js:146:32)
+      at processApply (E:\New folder (2)\web\node_modules\tailwindcss\lib\lib\expandApplyAtRules.js:380:29)
+      at E:\New folder (2)\web\node_modules\tailwindcss\lib\lib\expandApplyAtRules.js:551:9
+      at E:\New folder (2)\web\node_modules\tailwindcss\lib\processTailwindFeatures.js:55:50
+      at async plugins (E:\New folder (2)\web\node_modules\tailwindcss\lib\plugin.js:38:17)
+      at async LazyResult.runAsync (E:\New folder (2)\web\node_modules\postcss\lib\lazy-result.js:293:11)
+      at async compileCSS (file:///E:/New%20folder%20(2)/web/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:36898:21)
+      at async TransformPluginContext.transform (file:///E:/New%20folder%20(2)/web/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:36171:11)
+      at async PluginContainer.transform (file:///E:/New%20folder%20(2)/web/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:49099:18)
+      at async loadAndTransform (file:///E:/New%20folder%20(2)/web/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:51978:27)
+      at async viteTransformMiddleware (file:///E:/New%20folder%20(2)/web/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:62106:24)
+12:00:13 AM [vite] Internal server error: [postcss] E:/New folder (2)/web/src/index.css:1:1: The `font-heading` class does not exist. If `font-heading` is a custom class, make sure it is defined within a `@layer` directive.
+  Plugin: vite:css
+  File: E:/New folder (2)/web/src/index.css:1:0
+  1  |  @tailwind base;
+     |  ^
+  2  |  @tailwind components;
+  3  |  @tailwind utilities;
+      at Input.error (E:\New folder (2)\web\node_modules\postcss\lib\input.js:135:16)
+      at AtRule.error (E:\New folder (2)\web\node_modules\postcss\lib\node.js:146:32)
+      at processApply (E:\New folder (2)\web\node_modules\tailwindcss\lib\lib\expandApplyAtRules.js:380:29)
+      at E:\New folder (2)\web\node_modules\tailwindcss\lib\lib\expandApplyAtRules.js:551:9
+      at E:\New folder (2)\web\node_modules\tailwindcss\lib\processTailwindFeatures.js:55:50
+      at async plugins (E:\New folder (2)\web\node_modules\tailwindcss\lib\plugin.js:38:17)
+      at async LazyResult.runAsync (E:\New folder (2)\web\node_modules\postcss\lib\lazy-result.js:293:11)
+      at async compileCSS (file:///E:/New%20folder%20(2)/web/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:36898:21)
+      at async TransformPluginContext.transform (file:///E:/New%20folder%20(2)/web/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:36171:11)
+      at async PluginContainer.transform (file:///E:/New%20folder%20(2)/web/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:49099:18)
+      at async loadAndTransform (file:///E:/New%20folder%20(2)/web/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:51978:27)
+      at async viteTransformMiddleware (file:///E:/New%20folder%20(2)/web/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:62106:24)
+12:00:14 AM [vite] Internal server error: [postcss] E:/New folder (2)/web/src/index.css:1:1: The `font-heading` class does not exist. If `font-heading` is a custom class, make sure it is defined within a `@layer` directive.
+  Plugin: vite:css
+  File: E:/New folder (2)/web/src/index.css:1:0
+  1  |  @tailwind base;
+     |  ^
+  2  |  @tailwind components;
+  3  |  @tailwind utilities;
+      at Input.error (E:\New folder (2)\web\node_modules\postcss\lib\input.js:135:16)
+      at AtRule.error (E:\New folder (2)\web\node_modules\postcss\lib\node.js:146:32)
+      at processApply (E:\New folder (2)\web\node_modules\tailwindcss\lib\lib\expandApplyAtRules.js:380:29)
+      at E:\New folder (2)\web\node_modules\tailwindcss\lib\lib\expandApplyAtRules.js:551:9
+      at E:\New folder (2)\web\node_modules\tailwindcss\lib\processTailwindFeatures.js:55:50
+      at async plugins (E:\New folder (2)\web\node_modules\tailwindcss\lib\plugin.js:38:17)
+      at async LazyResult.runAsync (E:\New folder (2)\web\node_modules\postcss\lib\lazy-result.js:293:11)
+      at async compileCSS (file:///E:/New%20folder%20(2)/web/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:36898:21)
+      at async TransformPluginContext.transform (file:///E:/New%20folder%20(2)/web/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:36171:11)
+      at async PluginContainer.transform (file:///E:/New%20folder%20(2)/web/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:49099:18)
+      at async loadAndTransform (file:///E:/New%20folder%20(2)/web/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:51978:27)
+      at async viteTransformMiddleware (file:///E:/New%20folder%20(2)/web/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:62106:24)
+12:00:15 AM [vite] Internal server error: [postcss] E:/New folder (2)/web/src/index.css:1:1: The `font-heading` class does not exist. If `font-heading` is a custom class, make sure it is defined within a `@layer` directive.
+  Plugin: vite:css
+  File: E:/New folder (2)/web/src/index.css:1:0
+  1  |  @tailwind base;
+     |  ^
+  2  |  @tailwind components;
+  3  |  @tailwind utilities;
+      at Input.error (E:\New folder (2)\web\node_modules\postcss\lib\input.js:135:16)
+      at AtRule.error (E:\New folder (2)\web\node_modules\postcss\lib\node.js:146:32)
+      at processApply (E:\New folder (2)\web\node_modules\tailwindcss\lib\lib\expandApplyAtRules.js:380:29)
+      at E:\New folder (2)\web\node_modules\tailwindcss\lib\lib\expandApplyAtRules.js:551:9
+      at E:\New folder (2)\web\node_modules\tailwindcss\lib\processTailwindFeatures.js:55:50
+      at async plugins (E:\New folder (2)\web\node_modules\tailwindcss\lib\plugin.js:38:17)
+      at async LazyResult.runAsync (E:\New folder (2)\web\node_modules\postcss\lib\lazy-result.js:293:11)
+      at async compileCSS (file:///E:/New%20folder%20(2)/web/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:36898:21)
+      at async TransformPluginContext.transform (file:///E:/New%20folder%20(2)/web/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:36171:11)
+      at async PluginContainer.transform (file:///E:/New%20folder%20(2)/web/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:49099:18)
+      at async loadAndTransform (file:///E:/New%20folder%20(2)/web/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:51978:27)
+      at async viteTransformMiddleware (file:///E:/New%20folder%20(2)/web/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:62106:24)
+12:00:16 AM [vite] Internal server error: [postcss] E:/New folder (2)/web/src/index.css:1:1: The `font-heading` class does not exist. If `font-heading` is a custom class, make sure it is defined within a `@layer` directive.
+  Plugin: vite:css
+  File: E:/New folder (2)/web/src/index.css:1:0
+  1  |  @tailwind base;
+     |  ^
+  2  |  @tailwind components;
+  3  |  @tailwind utilities;
+      at Input.error (E:\New folder (2)\web\node_modules\postcss\lib\input.js:135:16)
+      at AtRule.error (E:\New folder (2)\web\node_modules\postcss\lib\node.js:146:32)
+      at processApply (E:\New folder (2)\web\node_modules\tailwindcss\lib\lib\expandApplyAtRules.js:380:29)
+      at E:\New folder (2)\web\node_modules\tailwindcss\lib\lib\expandApplyAtRules.js:551:9
+      at E:\New folder (2)\web\node_modules\tailwindcss\lib\processTailwindFeatures.js:55:50
+      at async plugins (E:\New folder (2)\web\node_modules\tailwindcss\lib\plugin.js:38:17)
+      at async LazyResult.runAsync (E:\New folder (2)\web\node_modules\postcss\lib\lazy-result.js:293:11)
+      at async compileCSS (file:///E:/New%20folder%20(2)/web/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:36898:21)
+      at async TransformPluginContext.transform (file:///E:/New%20folder%20(2)/web/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:36171:11)
+      at async PluginContainer.transform (file:///E:/New%20folder%20(2)/web/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:49099:18)
+      at async loadAndTransform (file:///E:/New%20folder%20(2)/web/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:51978:27)
+      at async viteTransformMiddleware (file:///E:/New%20folder%20(2)/web/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:62106:24)
+12:01:13 AM [vite] Internal server error: [postcss] E:/New folder (2)/web/src/index.css:46:5: The `shadow-card` class does not exist. If `shadow-card` is a custom class, make sure it is defined within a `@layer` directive.
+  Plugin: vite:css
+  File: E:/New folder (2)/web/src/index.css:46:4
+  44 |    }
+  45 |    .public-card {
+  46 |      @apply rounded-2xl border border-slate-200 bg-white shadow-card;
+     |      ^
+  47 |    }
+  48 |    .chip {
+      at Input.error (E:\New folder (2)\web\node_modules\postcss\lib\input.js:135:16)
+      at AtRule.error (E:\New folder (2)\web\node_modules\postcss\lib\node.js:146:32)
+      at processApply (E:\New folder (2)\web\node_modules\tailwindcss\lib\lib\expandApplyAtRules.js:380:29)
+      at E:\New folder (2)\web\node_modules\tailwindcss\lib\lib\expandApplyAtRules.js:551:9
+      at E:\New folder (2)\web\node_modules\tailwindcss\lib\processTailwindFeatures.js:55:50
+      at async plugins (E:\New folder (2)\web\node_modules\tailwindcss\lib\plugin.js:38:17)
+      at async LazyResult.runAsync (E:\New folder (2)\web\node_modules\postcss\lib\lazy-result.js:293:11)
+      at async compileCSS (file:///E:/New%20folder%20(2)/web/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:36898:21)
+      at async TransformPluginContext.transform (file:///E:/New%20folder%20(2)/web/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:36171:11)
+      at async PluginContainer.transform (file:///E:/New%20folder%20(2)/web/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:49099:18)
+      at async loadAndTransform (file:///E:/New%20folder%20(2)/web/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:51978:27)
+12:01:13 AM [vite] Pre-transform error: [postcss] E:/New folder (2)/web/src/index.css:46:5: The `shadow-card` class does not exist. If `shadow-card` is a custom class, make sure it is defined within a `@layer` directive.

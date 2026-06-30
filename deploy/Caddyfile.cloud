@@ -1,0 +1,7 @@
+{$SSLIP_HOST} {
+    reverse_proxy web:80
+}
+
+admin.{$SSLIP_HOST} {
+    reverse_proxy admin:80
+}

@@ -6,6 +6,8 @@
   "port": 8080,
   "addons": [],
   "environment": {
+    "ASPNETCORE_ENVIRONMENT": "CloudDemo",
+    "ConnectionStrings__DefaultConnection": "InMemory",
     "PUBLIC_ORIGIN": "https://YOUR-CONTAINER-NAME.containers.snapdeploy.dev"
   }
 }

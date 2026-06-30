@@ -36,7 +36,7 @@ COPY deploy/snapdeploy/start.sh /start.sh
 RUN chmod +x /start.sh
 
 ENV ASPNETCORE_ENVIRONMENT=CloudDemo
-ENV ConnectionStrings__DefaultConnection=""
+ENV ConnectionStrings__DefaultConnection=InMemory
 ENV Jwt__Issuer=smf-api
 ENV Jwt__Audience=smf-clients
 ENV Jwt__SigningKey=cloud-demo-secret-key-minimum-32-characters-long

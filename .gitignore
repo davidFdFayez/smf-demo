@@ -14,3 +14,4 @@ cloud-urls.txt
 /.vs/SMF/CopilotIndices/17.14.1431.25910/SemanticSymbols.db-shm
 /.vs/SMF/CopilotIndices/17.14.1431.25910/SemanticSymbols.db-wal
 *.vsidx
+/.vs/SMF

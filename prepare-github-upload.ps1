@@ -28,7 +28,7 @@ robocopy $root $staging /E /XD node_modules bin obj .git terminals agent-tools /
 Write-Host ""
 Write-Host "Checking required paths..."
 $missing = @()
-foreach ($item in @("Dockerfile", "SMF.sln", "web", "src")) {
+foreach ($item in @("Dockerfile", "SMF.sln", "web", "src", "deploy/snapdeploy")) {
     if (-not (Test-Path (Join-Path $staging $item))) { $missing += $item }
 }
 if ($missing.Count -gt 0) {
@@ -53,6 +53,7 @@ Write-Host "       smf-demo/Dockerfile"
 Write-Host "       smf-demo/web/"
 Write-Host "       smf-demo/src/"
 Write-Host "       smf-demo/SMF.sln"
+Write-Host "       smf-demo/deploy/snapdeploy/"
 Write-Host ""
 Write-Host "  WRONG: smf-demo/smf-github-upload/Dockerfile  (nested folder)"
 Write-Host "  RIGHT: smf-demo/Dockerfile  (at repo root)"

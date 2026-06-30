@@ -1,6 +1,5 @@
 # syntax=docker/dockerfile:1.7
-# Single-container cloud image (SnapDeploy / free hosts, 512MB RAM).
-# API uses in-memory demo data — no SQL Server required.
+# Same as root Dockerfile — kept in sync for reference.
 
 FROM node:20-alpine AS web-build
 WORKDIR /app
@@ -22,26 +21,26 @@ COPY src/ src/
 RUN dotnet publish src/SMF.Api/SMF.Api.csproj -c Release -o /app/publish /p:UseAppHost=false
 
 FROM mcr.microsoft.com/dotnet/aspnet:8.0 AS runtime
-RUN apt-get update && apt-get install -y --no-install-recommends nginx gettext \
-    && rm -rf /var/lib/apt/lists/*
+RUN apt-get update \
+ && DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends nginx gettext-base \
+ && rm -rf /var/lib/apt/lists/* \
+ && mkdir -p /etc/nginx/templates /etc/nginx/sites-available /etc/nginx/sites-enabled
 
 WORKDIR /app
 COPY --from=api-build /app/publish .
 COPY --from=web-build /app/dist /var/www/web
-
-RUN mkdir -p /app/App_Data/uploads \
- && chown -R www-data:www-data /var/www/web
+RUN mkdir -p /app/App_Data/uploads && chown -R www-data:www-data /var/www/web
 
 COPY deploy/snapdeploy/nginx-all-in-one.template /etc/nginx/templates/default.conf.template
 COPY deploy/snapdeploy/start.sh /start.sh
 RUN chmod +x /start.sh
 
-ENV ASPNETCORE_ENVIRONMENT=CloudDemo \
-    ConnectionStrings__DefaultConnection="" \
-    Jwt__Issuer=smf-api \
-    Jwt__Audience=smf-clients \
-    Jwt__SigningKey=cloud-demo-secret-key-minimum-32-characters-long \
-    API_PORT=5000
+ENV ASPNETCORE_ENVIRONMENT=CloudDemo
+ENV ConnectionStrings__DefaultConnection=""
+ENV Jwt__Issuer=smf-api
+ENV Jwt__Audience=smf-clients
+ENV Jwt__SigningKey=cloud-demo-secret-key-minimum-32-characters-long
+ENV API_PORT=5000
 
 EXPOSE 8080
-CMD ["/start.sh"]
+CMD ["/bin/bash", "/start.sh"]
